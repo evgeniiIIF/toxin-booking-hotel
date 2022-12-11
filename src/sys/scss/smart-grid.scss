@@ -50,7 +50,7 @@ $fields_lg: 15px;
 }
 
 @mixin container() {
-  max-width: 1120px;
+  max-width: 1160px;
   margin: 0 auto;
   @include container-full();
 }

@@ -24,6 +24,8 @@
   &__icon {
   }
   &__text {
+    @extend %font-body;
+    color: $dark-75;
   }
 }
 .nav-footer {
@@ -35,6 +37,7 @@
     @include mb(20px);
   }
   &__title {
+    @extend %font-h3;
   }
   &__list {
     @include mb(20px);
@@ -44,6 +47,7 @@
   &__item {
   }
   &__link {
+    @extend %font-header-link;
     color: $dark-50;
     &:hover {
       color: $dark-75;
@@ -52,8 +56,11 @@
 }
 .subscribe-footer {
   &__title {
+    @extend %font-h3;
   }
   &__text {
+    @extend %font-body;
+    color: $dark-75;
   }
   &__field {
   }
@@ -66,6 +73,8 @@
     justify-content: space-between;
   }
   &__text {
+    @extend %font-body;
+    color: $dark-75;
   }
   &__social {
     display: flex;

@@ -10,14 +10,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 14px;
+  padding: 10px 20px;
   cursor: pointer;
   border: none;
-  background: #098fcf;
+  border-radius: 22px;
+  background: $primary-color;
   transition: all 100ms linear 0s;
 
   &__text {
-    @extend %type-button;
+    @extend %font-h3;
+    color: #fff;
   }
   &__icon {
     display: flex;
@@ -29,7 +31,7 @@
     }
   }
   &:hover {
-    background: darken($color: #098fcf, $amount: 5%);
+    background: darken($color: $primary-color, $amount: 5%);
   }
 }
 
@@ -42,6 +44,12 @@
   border-radius: 22px;
   cursor: pointer;
   overflow: hidden;
+  &:hover {
+    // opacity: 1.5;
+    .button-border-gradient__text {
+      color: darken($color: $primary-color, $amount: 5%);
+    }
+  }
 
   &__text {
     display: flex;
@@ -50,10 +58,11 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 7px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     background: $bg-color;
     color: $primary-color;
+    @extend %font-h3;
   }
 
   &::before {
@@ -66,9 +75,6 @@
     z-index: 1;
     transition: all 100ms linear 0s;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  }
-  &:hover {
-    opacity: 0.5;
   }
 }
 
@@ -87,19 +93,8 @@
     opacity: 0.5;
   }
 
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   display: inline-block;
-  //   right: 15px;
-  //   top: 50%;
-  //   transform: translateY(-50%);
-  //   width: 18px;
-  //   height: 18px;
-  //   background: url("../../assets/img/arrow/arrow_forward.svg") center no-repeat;
-  // }
-
   &__text {
+    @extend %font-h3;
     color: $bg-color;
     text-align: center;
   }

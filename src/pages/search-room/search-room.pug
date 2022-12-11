@@ -1,4 +1,4 @@
-extends ../../assets/main.pug
+extends ../../sys/pug/main.pug
 
 block variables
 	- var title = 'Toxin';
@@ -25,10 +25,10 @@ block content
 									placeholder: 'ДД.ММ.ГГГГ', 
 									tabindex: 1,
 									arrowSvg: {
-										name: 'expand-more', 
-										fill: '#1F2041',
-										opacity: '0.5'
-									}
+										id:'#expand-more',
+										width: 13,
+										height: 8,
+									},
 								},
 							})
 						+item-quantity-dropdown({
@@ -39,16 +39,16 @@ block content
 							label: 'гости', 
 							type,
 							arrowSvg: {
-								name: 'expand-more', 
-								fill: '#1F2041',
-								opacity: '0.5'
+								id:'#expand-more',
+								width: 13,
+								height: 8,
 							},
 							placeholder: 'Сколько гостей', 
 							buttons: true, 
 							arrowSvg: {
-								name: 'expand-more', 
-								fill: '#1F2041',
-								opacity: '0.5'
+								id:'#expand-more',
+								width: 13,
+								height: 8,
 							},
 							items: [
 								{ text:'взрослые', id: 'item1', itemCount: 2 },
@@ -73,7 +73,7 @@ block content
 						+rich-checkbox-buttons({
 							title: 'доступность',
 							items: [
-								{text: 'Широкий коридор', subtext: 'Ширина коридоров в номере не менее 91 см.'},
+								{isChecked: true, text: 'Широкий коридор', subtext: 'Ширина коридоров в номере не менее 91 см.'},
 								{text: 'Помощник для инвалидов', subtext: 'На 1 этаже вас встретит специалист  и проводит до номера.'},
 							]
 						})
@@ -85,9 +85,9 @@ block content
 							label: 'удобства номера', 
 							type:'text',
 							arrowSvg: {
-								name: 'expand-more', 
-								fill: '#1F2041',
-								opacity: '0.5'
+								id:'#expand-more',
+								width: 13,
+								height: 8,
 							},
 							placeholder: 'Удобства', 
 							buttons: false, 
@@ -109,13 +109,13 @@ block content
 								{text:'Шампунь', isChecked: false},
 							],
 							arrowSvg: {
-								name: 'expand-more', 
-								fill: '#1F2041',
-								opacity: '0.5'
-							}
+								id:'#expand-more',
+								width: 13,
+								height: 8,
+							},
 						})
 				.main__content
-					h1.main__title.type-h1 Номера, которые мы для вас подобрали
+					h1.main__title Номера, которые мы для вас подобрали
 					.main__cards
 						include ./room-cards.pug
 					.main__pagination

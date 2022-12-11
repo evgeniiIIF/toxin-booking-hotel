@@ -1,16 +1,16 @@
 .item-checkbox {
   &:hover {
     .item-checkbox__text {
-      color: #000;
+      color: $dark-75;
     }
     .item-checkbox__pseudo-flag {
-      border-color: #000;
+      border-color: $dark-50;
     }
   }
   &__label {
     position: relative;
     display: flex;
-    align-items: center;
+    // align-items: center;
     cursor: pointer;
   }
 
@@ -21,7 +21,7 @@
 
     &:checked {
       & ~ .item-checkbox__pseudo-flag {
-        // border-color: $primary-color;
+        border-color: $primary-color;
 
         & .item-checkbox__icon {
           display: flex;
@@ -35,8 +35,8 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    border: 1px solid #d4d4d4;
-    // border-radius: 4px;
+    border: 1px solid $dark-25;
+    border-radius: 4px;
     background: $bg-color;
   }
   &__icon {
@@ -49,11 +49,17 @@
       width: 12px;
       height: 8px;
       fill: transparent;
-      stroke: red;
+      stroke: $primary-color;
     }
   }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include mb(5px);
+  }
   &__text {
-    @extend %type-checkbox;
+    @extend %font-checkbox;
+
     // line-height: 1;
   }
 }

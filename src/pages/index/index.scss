@@ -1,5 +1,6 @@
 @import "../../sys/scss/settings.scss";
 @import "../../uikit/elements/elements-page/elements-page.scss";
+@import "../../uikit/cards/cards-page/cards-page.scss";
 @import "../../uikit/tables/tables-page/tables-page.scss";
 
 //  ========= Modules ==========
@@ -14,54 +15,58 @@
 // .main::-webkit-scrollbar {
 //   width: 0;
 // }
-// .banner {
-//   position: relative;
-//   min-height: 100vh;
-//   height: 100%;
+.room-selection {
+  position: relative;
+  min-height: calc(100vh - 70px);
+  // height: 100%;
 
-//   &__image {
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//   }
-//   &__container {
-//     min-height: 100vh;
-//   }
-//   &__body {
-//     position: relative;
-//     z-index: 2;
-//     display: flex;
-//     flex-direction: column;
-//     min-height: 100vh;
-//     padding: 140px 0 18px;
-//   }
-//   &__form {
-//     flex: 1 1 auto;
-//     max-width: 380px;
-//     margin-bottom: 50px;
-//   }
-//   &__text {
-//     max-width: 297px;
-//     align-self: end;
-//     &.type-body {
-//       text-align: right;
-//     }
-//   }
-// }
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &__container {
+    min-height: 100vh;
+  }
+  &__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    // min-height: 100vh;
+    min-height: calc(100vh - 70px);
 
-// @media (max-width: 380px) {
-//   .card {
-//     padding: 20px 10px 20px;
-//     border: 1px solid $dark-50;
-//     transform: scale(90%);
-//   }
-//   .banner__body {
-//     margin: 0 -30px;
-//   }
-//   .banner__text {
-//     align-self: center;
-//     &.type-body {
-//       text-align: center;
-//     }
-//   }
-// }
+    padding: 140px 0 18px;
+  }
+  &__form {
+    flex: 1 1 auto;
+    max-width: 380px;
+    margin-bottom: 50px;
+  }
+  &__text {
+    max-width: 297px;
+    align-self: end;
+    @extend %font-body;
+    text-align: right;
+    color: $dark-75;
+  }
+}
+
+@media (max-width: 416px) {
+  .find-room {
+    padding: 20px 10px 20px;
+    border: 1px solid $dark-50;
+  }
+  .room-selection__body {
+    margin: 0 -10px;
+  }
+  .room-selection__text {
+    align-self: center;
+    text-align: center;
+  }
+}
+@media (max-width: 370px) {
+  .find-room {
+    // width: 340px;
+  }
+}

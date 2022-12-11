@@ -16,12 +16,14 @@ import { toggleLock } from "../../../sys/js/helper-functions";
       // },
       floatingBlockHandle() {
         const floatingBlock = document.querySelector(".js-floating-block");
-        const parentDrawerBlock = document.querySelector(".js-target");
-        const drawerBlock = document.querySelector(drawerBlockClassName);
-        if (mobileDisplayMode) {
-          drawerBlock.append(floatingBlock);
-        } else {
-          parentDrawerBlock.before(floatingBlock);
+        if (floatingBlock) {
+          const parentDrawerBlock = document.querySelector(".js-target");
+          const drawerBlock = document.querySelector(drawerBlockClassName);
+          if (mobileDisplayMode) {
+            drawerBlock.append(floatingBlock);
+          } else {
+            parentDrawerBlock.before(floatingBlock);
+          }
         }
       },
     };

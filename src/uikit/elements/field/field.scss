@@ -2,11 +2,10 @@
   &__label {
     display: flex;
     flex-direction: column;
-
-    &-text {
-      margin-bottom: 5px;
-      @extend %type-label;
-    }
+  }
+  &__label-text {
+    margin-bottom: 5px;
+    @extend %font-h3;
   }
 
   &__input {
@@ -18,7 +17,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    @extend %type-field;
+    @extend %font-field;
 
     &::placeholder {
     }

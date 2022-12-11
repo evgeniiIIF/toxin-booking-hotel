@@ -35,85 +35,80 @@ $z-iconMenu: 10;
 // ================Fonts=================
 %type-h1 {
   font-weight: 700;
-  font-size: 48px;
-  line-height: 59px;
-  color: #000000;
+  font-size: 24px;
+  line-height: 1.2;
 }
-%type-h2 {
+
+%type-b1 {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 44px;
-  color: #000000;
-}
-%type-h3 {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  color: #000000;
-}
-%type-h4 {
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
-}
-%type-h5 {
-  font-weight: 500;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 %type-h6 {
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
-}
-%type-h7 {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000000;
-}
-%type-h8 {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #000000;
-}
-%type-signature {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 1.2;
 }
 %type-body {
   font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  color: #565656;
+  font-size: 14px;
+  line-height: 1.9;
 }
-%type-body-th {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  color: #ffffff;
+%type-m1 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+}
+%type-s {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+}
+%type-s1 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+}
+%type-c {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 // ================FontsGroups=================
-%type-button {
+%font-header-link {
+  @extend %type-m1;
+  color: $dark-50;
+}
+%font-h1 {
+  @extend %type-h1;
+}
+
+%font-h3 {
+  @extend %type-b1;
+}
+%font-body {
+  @extend %type-body;
+}
+%font-field {
+  @extend %type-body;
+  color: $dark-75;
+}
+%font-checkbox {
+  @extend %type-m1;
+  color: $dark-50;
+}
+%font-rich-checkbox-buttons-title {
   @extend %type-h6;
-  color: #fff;
+  color: $dark-75;
 }
-%type-label {
-  @extend %type-h5;
-  color: #000000;
+%font-rich-checkbox-buttons-subtext {
+  @extend %type-s;
+  color: $dark-50;
 }
-%type-field {
-  @extend %type-signature;
-  color: #565656;
-}
-%type-checkbox {
-  @extend %type-signature;
-}
-%type-menu-link {
-  @extend %type-h4;
-}
+// ================Total=================
+
 html {
   font-size: $mainFontSize;
   font-family: $mainFontFamily;
@@ -133,7 +128,7 @@ body {
 
 .main {
   flex: 1 1 auto;
-  padding-top: 90px;
+  margin-top: 70px;
   @include mb(100px);
 }
 
@@ -159,6 +154,9 @@ body {
 }
 
 .card {
+  padding: 40px 30px 30px;
   background: #ffffff;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }

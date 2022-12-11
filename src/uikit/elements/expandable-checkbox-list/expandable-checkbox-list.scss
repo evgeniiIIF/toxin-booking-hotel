@@ -3,6 +3,7 @@
     cursor: pointer;
   }
   &__title {
+    @extend %font-h3;
   }
   &__arrow {
   }

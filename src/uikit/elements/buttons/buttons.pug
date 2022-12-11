@@ -1,13 +1,13 @@
 mixin button-color(opts)
-  button(type='button').button-color
+  a.button-color
     if(opts.text)
       span.button-color__text= (opts.text)
     else
       +it(opts.it)
 
 mixin button-border-gradient(opts)
-  button(type='button').button-border-gradient
-    .button-border__text= (opts.text)
+  a.button-border-gradient
+    .button-border-gradient__text= (opts.text)
 
 mixin button-arrow(opts)
   a(href="./search-room.html").button-arrow

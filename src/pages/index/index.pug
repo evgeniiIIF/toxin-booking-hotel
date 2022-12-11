@@ -1,18 +1,81 @@
 extends ../../sys/pug/main.pug
 
 block variables
-	- var title = 'processing24';
-	- var description = 'Топливные карты';
+	- var title = 'Toxin';
+	- var description = 'Бронирование отелей';
 	//- - var pageClass = 'show-sidebar';
 	
 block content
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
-		//- include ./modules/module/module.pug
+	main.main
+		section.room-selection
+			.room-selection__image.ibg
+				img(src=require("../../assets/img/fullMainImage/fullMainImage.jpg"), alt="room")
+			.container
+				.room-selection__body
+					.room-selection__form
+						+find-room({
+							title: 'Найдём номера под ваши пожелания',
+							drop1:{
+								js: false,
+								readonly: true,
+								dropdownId: 'drop1',
+								label: 'прибытие', 
+								type: 'text', 
+								placeholder: 'ДД.ММ.ГГГГ', 
+								tabindex: 1,
+								arrowSvg: {
+									id:'#expand-more',
+									width: 13,
+									height: 8,
+								},
+							},
+							drop2: {
+								js: false, 
+								readonly: true,
+								dropdownId: 'drop2',
+								label: 'выезд', 
+								type: 'text', 
+								placeholder: 'ДД.ММ.ГГГГ', 
+								tabindex: 1,
+								arrowSvg: {
+									id:'#expand-more',
+									width: 13,
+									height: 8,
+								},
+							},
+							iqDropdown:{
+								js: true,
+								readonly: true,
+								id: 'guests', 
+								dropdownId: 'drop3',
+								label: 'гости', 
+								type: 'text',
+								placeholder: 'Сколько гостей', 
+								arrowSvg: {
+									id:'#expand-more',
+									width: 13,
+									height: 8,
+								},
+								buttons: true, 
+								items: [
+									{ text:'взрослые', id: 'item1', itemCount: 0 },
+									{ text:'дети', id: 'item2', itemCount: 0 },
+									{ text:'младенцы', id: 'item3', itemCount: 0 },
+								],
+								tabindex: 1
+							},
+							buttonArrow:{
+								text: 'подобрать номер',
+							},
+						})
+					p.room-selection__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug

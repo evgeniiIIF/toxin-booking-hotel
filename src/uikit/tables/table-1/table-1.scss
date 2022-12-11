@@ -4,7 +4,6 @@
   border-collapse: collapse;
   th,
   td {
-    @extend %type-h6;
   }
 
   &__border-spacing {
@@ -18,10 +17,8 @@
     margin-bottom: 50px;
     color: #fff;
     text-align: left;
-    @extend %type-h6;
   }
   &__rth {
-    @extend %type-body-th;
     background: #098fcf;
   }
   &__td {

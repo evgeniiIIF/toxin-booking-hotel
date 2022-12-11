@@ -23,7 +23,7 @@
   border-radius: 50%;
   background: #098fcf;
   box-shadow: none;
-  cursor: default;
+  cursor: pointer;
 }
 .noUi-handle:before,
 .noUi-handle:after {
@@ -42,6 +42,9 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $dark-50;
+  }
+  &__title {
+    @extend %font-h3;
   }
 }
 

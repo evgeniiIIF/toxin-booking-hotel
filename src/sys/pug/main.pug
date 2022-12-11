@@ -1,6 +1,6 @@
 include ../../uikit/elements/elements-page/elements-page.pug
 include ../../uikit/tables/tables-page/tables-page.pug
-//- include ../../uikit/cards/cards-page/cards-page.pug
+include ../../uikit/cards/cards-page/cards-page.pug
 
 
 
@@ -19,17 +19,25 @@ html(lang="ru")
 		include ../../sys/img/svg-sptites/svg-sptites.svg
 		.wrapper
 			+header({
+				floatingBlock: false,
 				logo: {
-					href: '#',
-					logoIcon: require("../../assets/img/logo/logo.png"),
+					href: 'index.html',
+					logoIcon: require("../../assets/img/logo/logo-toxin.png"),
+					logoText: require("../../assets/img/logo/TOXIN.png"),
 				},
 				menuItems: [
-					{text: 'Доставка топлива', href: "http://processing", submenuItems: false},
 					
-					{text: 'Топливные карты', href: "http://processing24", submenuItems: [
+
+
+
+					{text: 'О нас', href: "http://processing", submenuItems: false},
+					
+					{text: 'Услуги', href: "http://processing24", submenuItems: [
+
 						{text: 'submenuItem', href: "http://1", submenuItems: false},
 						
 						{text: 'submenuItem', href: "http://2", submenuItems: [
+
 							{text: 'submenuItem', href: "http://1", submenuItems: false},
 							{text: 'submenuItem', href: "http://2", submenuItems: false},
 							{text: 'submenuItem', href: "http://3", submenuItems: false},
@@ -37,27 +45,32 @@ html(lang="ru")
 
 						{text: 'submenuItem', href: "http://3", submenuItems: false},
 					]},
-					{text: 'АЗС', href: "http://АЗС", submenuItems: [
+
+					{text: 'Вакансии', href: "http://Вакансии", submenuItems: [
+
 						{text: 'submenuItem', href: "http://1", submenuItems: false},
 						{text: 'submenuItem', href: "http://2", submenuItems: false},
 						{text: 'submenuItem', href: "http://3", submenuItems: false},
 					]},
-					{text: 'Цены на топливо', href: "http://processing24", submenuItems: false},
-					{text: 'О компании', href: "http://processing24", submenuItems: [
+
+					{text: 'Новости', href: "http://processing24", submenuItems: false},
+
+					{text: 'Соглашения', href: "http://processing24", submenuItems: [
+						
 						{text: 'submenuItem', href: "http://1", submenuItems: false},
 						{text: 'submenuItem', href: "http://2", submenuItems: false},
 						{text: 'submenuItem', href: "http://3", submenuItems: false},
 					]},
-					{text: 'Контакты', href: "http://processing24", submenuItems: false},
 				],
 			})
 			block content
 			+footer({
 				logo:{
-					href: 'https://changeme',
-					logoIcon: require("../../assets/img/logo/logo.png"),
+					href: 'index.html',
+					logoIcon: require("../../assets/img/logo/logo-toxin.png"),
+					logoText: require("../../assets/img/logo/TOXIN.png"),
 				},
-				blockLogoText: 'Заполните заявку на сайте, укажите удобное для вас место приезда заправщика, сорт и количество топлива, которое хотите купить',
+				blockLogoText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 				navItems:[
 					{
 						title: "навигация", 
@@ -97,9 +110,9 @@ html(lang="ru")
 						placeholder: 'Email', 
 						tabindex: 1,
 						arrowSvg: {
-							name: 'arrow-forward', 
-							fill: "#BC9CFF",
-							opacity: null,
+							id:'#arrow-forward',
+							width: 17,
+							height: 18,
 						}
 					}
 				},

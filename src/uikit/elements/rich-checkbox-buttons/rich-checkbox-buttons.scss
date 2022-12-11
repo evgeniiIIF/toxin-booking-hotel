@@ -1,4 +1,7 @@
 .rich-checkbox-buttons {
+  &__title {
+    @extend %font-h3;
+  }
   &__list {
   }
   &__item {
@@ -7,13 +10,10 @@
   }
   &__item-body {
   }
-  &__item-text {
-    font-weight: 700;
+  .item-checkbox__text {
+    @extend %font-rich-checkbox-buttons-title;
   }
-  &__item-subtext {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 117%;
-    color: $dark-50;
+  .item-checkbox__subtext {
+    @extend %font-rich-checkbox-buttons-subtext;
   }
 }

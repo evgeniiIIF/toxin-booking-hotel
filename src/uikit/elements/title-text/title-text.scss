@@ -2,9 +2,7 @@
   @include mb(10px);
 
   &__title {
-    @extend %type-h8;
   }
   &__text {
-    @extend %type-body;
   }
 }

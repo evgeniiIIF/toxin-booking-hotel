@@ -5,25 +5,25 @@ mixin footer(opts)
         .footer__block-logo.block-logo
           .block-logo__icon
             +logo(opts)
-          p.block-logo__text.type-body= (opts.blockLogoText)
+          p.block-logo__text= (opts.blockLogoText)
         nav.footer__nav.nav-footer
           each navItem in opts.navItems
             .nav-footer__item
-              h3.nav-footer__title.type-h3= navItem.title
+              h3.nav-footer__title= navItem.title
               ul.nav-footer__list.nav-footer-list
                 each navListLink in navItem.links
                   li.nav-footer-list__item
-                    a(href=navListLink.href).nav-footer-list__link.type-body= navListLink.text
+                    a(href=navListLink.href).nav-footer-list__link= navListLink.text
         .footer__subscribe.subscribe-footer
-          h3.subscribe-footer__title.type-h3= (opts.subscribe.title)
-          p.subscribe-footer__text.type-body= (opts.subscribe.text)
+          h3.subscribe-footer__title= (opts.subscribe.title)
+          p.subscribe-footer__text= (opts.subscribe.text)
           .subscribe-footer__field
             +subscription-text-field(opts.subscribe.field)
       .footer__copy.copy
         .copy__row
           .copy__logo
             +logo(opts)
-          p.copy__text.type-body= (opts.copy.text)
+          p.copy__text= (opts.copy.text)
           .copy__social.social
             each copyIcon in opts.copy.icons
               img(src=(copyIcon.src), alt=(copyIcon.alt)).social__icon

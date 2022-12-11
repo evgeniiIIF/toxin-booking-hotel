@@ -1,7 +1,7 @@
 mixin find-room(opts)
   .find-room.card
     .card__item
-      h3.find-room__title.card__title.type-h1= (opts.title)
+      h3.find-room__title.card__title= (opts.title)
     .card__item
       +air-datepicker-calendar(opts)
     .card__item
@@ -19,10 +19,10 @@ mixin find-room(opts)
 //-     placeholder: 'ДД.ММ.ГГГГ', 
 //-     tabindex: 1,
 //-     arrowSvg: {
-//-       name: 'expand-more', 
-//-       fill: '#1F2041',
-//-       opacity: '0.5'
-//-     }
+//-       id:'#expand-more',
+//-       width: 13,
+//-       height: 8,
+//-     },
 //-   },
 //-   drop2: {
 //-     js: false, 
@@ -32,10 +32,10 @@ mixin find-room(opts)
 //-     placeholder: 'ДД.ММ.ГГГГ', 
 //-     tabindex: 1,
 //-     arrowSvg: {
-//-       name: 'expand-more', 
-//-       fill: '#1F2041',
-//-       opacity: '0.5'
-//-     }
+//-       id:'#expand-more',
+//-       width: 13,
+//-       height: 8,
+//-     },
 //-   },
 //-   iqDropdown:{
 //-     js: true,
@@ -45,9 +45,9 @@ mixin find-room(opts)
 //-     type: 'text',
 //-     placeholder: 'Сколько гостей', 
 //-     arrowSvg: {
-//-       name: 'expand-more', 
-//-       fill: '#1F2041',
-//-       opacity: '0.5'
+//-       id:'#expand-more',
+//-       width: 13,
+//-       height: 8,
 //-     },
 //-     buttons: true, 
 //-     items: [

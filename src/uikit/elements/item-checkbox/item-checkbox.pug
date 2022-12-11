@@ -9,8 +9,13 @@ mixin item-checkbox(opts)
             width: 14,
             height: 10,
           })
-      span.item-checkbox__text= opts.text
+      .item-checkbox__content
+        span.item-checkbox__text= opts.text
+        if(opts.subtext)
+          span.item-checkbox__subtext= opts.subtext
 
 //- +item-checkbox({
-//-   text:'Завтрак', isChecked: false
+//-   isChecked: false
+//-   text:'Завтрак', 
+//-   subtext:'Подтекст', 
 //- },)

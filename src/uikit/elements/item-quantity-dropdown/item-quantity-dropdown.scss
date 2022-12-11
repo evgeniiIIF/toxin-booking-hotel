@@ -10,6 +10,7 @@
     justify-content: space-between;
   }
   &__button {
+    @extend %font-h3;
     color: $primary-color;
     cursor: pointer;
     &--disabled {
@@ -24,6 +25,9 @@
   align-items: center;
 
   &__quantity-control {
+  }
+  &__text {
+    @extend %font-h3;
   }
   &__quantity-button {
     display: inline-block;
@@ -44,6 +48,7 @@
     display: inline-flex;
     justify-content: center;
     width: 32px;
+    @extend %font-h3;
   }
 }
 

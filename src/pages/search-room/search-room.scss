@@ -1,4 +1,4 @@
-@import "../../assets/scss/settings.scss";
+@import "../../sys/scss/settings.scss";
 
 //  ========= UIkit ==========
 
@@ -6,9 +6,12 @@
 @import "../../uikit/cards/cards-page/cards-page.scss";
 
 .main {
+  &__title {
+    @extend %font-h1;
+  }
   &__body {
     display: flex;
-    padding-top: 100px;
+    padding-top: 30px;
   }
   &__sidebar {
   }
@@ -106,10 +109,6 @@
     overflow-y: auto;
     transition: all 0.2s ease 0s;
     background: #fff;
-
-    & .air-datepicker-calendar__menu {
-      transform: scaleY(90%) translateY(-20px);
-    }
 
     & .dropdown--menu-open {
       width: 295px;
