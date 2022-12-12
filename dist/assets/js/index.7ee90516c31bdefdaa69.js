@@ -17,75 +17,6 @@
 
 /***/ }),
 
-/***/ 7946:
-/***/ (function() {
-
-var body = document.body;
-var prevTargets = [];
-function showBlock(opts) {
-  (function Func() {
-    this.trigger = opts.e.target.closest(opts.trigger);
-    this.target = opts.e.target.closest(opts.target);
-    this.openableElement = opts.openableElement;
-    this.addClass = opts.addClass;
-    if (this.trigger) {
-      if (this.prev) {
-        if (this.prev.querySelector(opts.openableElement).contains(opts.e.target)) {
-          if (this.prev.querySelector(opts.openableElement).contains(this.trigger)) {
-            this.target.classList.toggle(opts.addClass);
-            if (!this.prev.classList.contains("js-not-close")) {
-              prevTargets.push(this.prev);
-            }
-            this.prev = this.target;
-            return;
-          } else {
-            return;
-          }
-        }
-        if (this.prev === this.target) {
-          this.prev.classList.toggle(opts.addClass);
-          return;
-        }
-        this.prev.classList.remove(opts.addClass);
-      }
-      if (this.target.querySelector(opts.openableElement).contains(opts.e.target)) {
-        return;
-      }
-      prevTargets.forEach(function (item) {
-        return item.classList.remove(opts.addClass);
-      });
-      prevTargets = [];
-      this.target.classList.toggle(opts.addClass);
-      this.prev = this.target;
-    } else {
-      if (this.prev) {
-        if (this.prev.querySelector(opts.openableElement).contains(opts.e.target)) {
-          return;
-        }
-        this.prev.classList.remove(opts.addClass);
-        prevTargets.forEach(function (item) {
-          return item.classList.remove(opts.addClass);
-        });
-        prevTargets = [];
-      }
-    }
-  })();
-}
-function showSubmenu(event) {
-  showBlock({
-    e: event,
-    trigger: ".js-button",
-    target: ".js-target",
-    addClass: "js--open",
-    openableElement: ".js-openable-element"
-  });
-}
-body.addEventListener("click", showSubmenu);
-
-// ++++++++++++++++++++++++
-
-/***/ }),
-
 /***/ 9504:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
@@ -282,6 +213,10 @@ starBorder += 1;
 }
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
 };
+
+
+
+
 
 
 
@@ -642,28 +577,28 @@ pug_mixins["footer"] = pug_interp = function(opts){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\u003Cfooter class=\"footer\"\u003E\u003Cdiv class=\"footer__container container\"\u003E\u003Cdiv class=\"footer__row\"\u003E\u003Cdiv class=\"footer__block-logo block-logo\"\u003E\u003Cdiv class=\"block-logo__icon\"\u003E";
 pug_mixins["logo"](opts);
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"block-logo__text type-body\"\u003E" + (pug.escape(null == (pug_interp = (opts.blockLogoText)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E\u003Cnav class=\"footer__nav nav-footer\"\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"block-logo__text\"\u003E" + (pug.escape(null == (pug_interp = (opts.blockLogoText)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E\u003Cnav class=\"footer__nav nav-footer\"\u003E";
 // iterate opts.navItems
 ;(function(){
   var $$obj = opts.navItems;
   if ('number' == typeof $$obj.length) {
       for (var pug_index12 = 0, $$l = $$obj.length; pug_index12 < $$l; pug_index12++) {
         var navItem = $$obj[pug_index12];
-pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title type-h3\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
 // iterate navItem.links
 ;(function(){
   var $$obj = navItem.links;
   if ('number' == typeof $$obj.length) {
       for (var pug_index13 = 0, $$l = $$obj.length; pug_index13 < $$l; pug_index13++) {
         var navListLink = $$obj[pug_index13];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
     for (var pug_index13 in $$obj) {
       $$l++;
       var navListLink = $$obj[pug_index13];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
     }
   }
 }).call(this);
@@ -675,21 +610,21 @@ pug_html = pug_html + "\u003C\u002Ful\u003E\u003C\u002Fdiv\u003E";
     for (var pug_index12 in $$obj) {
       $$l++;
       var navItem = $$obj[pug_index12];
-pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title type-h3\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
 // iterate navItem.links
 ;(function(){
   var $$obj = navItem.links;
   if ('number' == typeof $$obj.length) {
       for (var pug_index14 = 0, $$l = $$obj.length; pug_index14 < $$l; pug_index14++) {
         var navListLink = $$obj[pug_index14];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
     for (var pug_index14 in $$obj) {
       $$l++;
       var navListLink = $$obj[pug_index14];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
     }
   }
 }).call(this);
@@ -699,11 +634,11 @@ pug_html = pug_html + "\u003C\u002Ful\u003E\u003C\u002Fdiv\u003E";
   }
 }).call(this);
 
-pug_html = pug_html + "\u003C\u002Fnav\u003E\u003Cdiv class=\"footer__subscribe subscribe-footer\"\u003E\u003Ch3 class=\"subscribe-footer__title type-h3\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.title)) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cp class=\"subscribe-footer__text type-body\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"subscribe-footer__field\"\u003E";
+pug_html = pug_html + "\u003C\u002Fnav\u003E\u003Cdiv class=\"footer__subscribe subscribe-footer\"\u003E\u003Ch3 class=\"subscribe-footer__title\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.title)) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cp class=\"subscribe-footer__text\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"subscribe-footer__field\"\u003E";
 pug_mixins["subscription-text-field"](opts.subscribe.field);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"footer__copy copy\"\u003E\u003Cdiv class=\"copy__row\"\u003E\u003Cdiv class=\"copy__logo\"\u003E";
 pug_mixins["logo"](opts);
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"copy__text type-body\"\u003E" + (pug.escape(null == (pug_interp = (opts.copy.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"copy__social social\"\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"copy__text\"\u003E" + (pug.escape(null == (pug_interp = (opts.copy.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"copy__social social\"\u003E";
 // iterate opts.copy.icons
 ;(function(){
   var $$obj = opts.copy.icons;
@@ -758,7 +693,11 @@ pug_mixins["svg"]({
             width: 14,
             height: 10,
           });
-pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fspan\u003E\u003Cspan class=\"item-checkbox__text\"\u003E" + (pug.escape(null == (pug_interp = opts.text) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fspan\u003E\u003Cdiv class=\"item-checkbox__content\"\u003E\u003Cspan class=\"item-checkbox__text\"\u003E" + (pug.escape(null == (pug_interp = opts.text) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+if ((opts.subtext)) {
+pug_html = pug_html + "\u003Cspan class=\"item-checkbox__subtext\"\u003E" + (pug.escape(null == (pug_interp = opts.subtext) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+}
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E";
 };
 
 
@@ -983,6 +922,10 @@ starBorder += 1;
 }
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
 };
+
+
+
+
 
 
 
@@ -1343,28 +1286,28 @@ pug_mixins["footer"] = pug_interp = function(opts){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\u003Cfooter class=\"footer\"\u003E\u003Cdiv class=\"footer__container container\"\u003E\u003Cdiv class=\"footer__row\"\u003E\u003Cdiv class=\"footer__block-logo block-logo\"\u003E\u003Cdiv class=\"block-logo__icon\"\u003E";
 pug_mixins["logo"](opts);
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"block-logo__text type-body\"\u003E" + (pug.escape(null == (pug_interp = (opts.blockLogoText)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E\u003Cnav class=\"footer__nav nav-footer\"\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"block-logo__text\"\u003E" + (pug.escape(null == (pug_interp = (opts.blockLogoText)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E\u003Cnav class=\"footer__nav nav-footer\"\u003E";
 // iterate opts.navItems
 ;(function(){
   var $$obj = opts.navItems;
   if ('number' == typeof $$obj.length) {
       for (var pug_index29 = 0, $$l = $$obj.length; pug_index29 < $$l; pug_index29++) {
         var navItem = $$obj[pug_index29];
-pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title type-h3\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
 // iterate navItem.links
 ;(function(){
   var $$obj = navItem.links;
   if ('number' == typeof $$obj.length) {
       for (var pug_index30 = 0, $$l = $$obj.length; pug_index30 < $$l; pug_index30++) {
         var navListLink = $$obj[pug_index30];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
     for (var pug_index30 in $$obj) {
       $$l++;
       var navListLink = $$obj[pug_index30];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
     }
   }
 }).call(this);
@@ -1376,21 +1319,21 @@ pug_html = pug_html + "\u003C\u002Ful\u003E\u003C\u002Fdiv\u003E";
     for (var pug_index29 in $$obj) {
       $$l++;
       var navItem = $$obj[pug_index29];
-pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title type-h3\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"nav-footer__item\"\u003E\u003Ch3 class=\"nav-footer__title\"\u003E" + (pug.escape(null == (pug_interp = navItem.title) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cul class=\"nav-footer__list nav-footer-list\"\u003E";
 // iterate navItem.links
 ;(function(){
   var $$obj = navItem.links;
   if ('number' == typeof $$obj.length) {
       for (var pug_index31 = 0, $$l = $$obj.length; pug_index31 < $$l; pug_index31++) {
         var navListLink = $$obj[pug_index31];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
     for (var pug_index31 in $$obj) {
       $$l++;
       var navListLink = $$obj[pug_index31];
-pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link type-body\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+pug_html = pug_html + "\u003Cli class=\"nav-footer-list__item\"\u003E\u003Ca" + (" class=\"nav-footer-list__link\""+pug.attr("href", navListLink.href, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = navListLink.text) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
     }
   }
 }).call(this);
@@ -1400,11 +1343,11 @@ pug_html = pug_html + "\u003C\u002Ful\u003E\u003C\u002Fdiv\u003E";
   }
 }).call(this);
 
-pug_html = pug_html + "\u003C\u002Fnav\u003E\u003Cdiv class=\"footer__subscribe subscribe-footer\"\u003E\u003Ch3 class=\"subscribe-footer__title type-h3\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.title)) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cp class=\"subscribe-footer__text type-body\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"subscribe-footer__field\"\u003E";
+pug_html = pug_html + "\u003C\u002Fnav\u003E\u003Cdiv class=\"footer__subscribe subscribe-footer\"\u003E\u003Ch3 class=\"subscribe-footer__title\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.title)) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\u003Cp class=\"subscribe-footer__text\"\u003E" + (pug.escape(null == (pug_interp = (opts.subscribe.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"subscribe-footer__field\"\u003E";
 pug_mixins["subscription-text-field"](opts.subscribe.field);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"footer__copy copy\"\u003E\u003Cdiv class=\"copy__row\"\u003E\u003Cdiv class=\"copy__logo\"\u003E";
 pug_mixins["logo"](opts);
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"copy__text type-body\"\u003E" + (pug.escape(null == (pug_interp = (opts.copy.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"copy__social social\"\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cp class=\"copy__text\"\u003E" + (pug.escape(null == (pug_interp = (opts.copy.text)) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"copy__social social\"\u003E";
 // iterate opts.copy.icons
 ;(function(){
   var $$obj = opts.copy.icons;
@@ -1459,7 +1402,11 @@ pug_mixins["svg"]({
             width: 14,
             height: 10,
           });
-pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fspan\u003E\u003Cspan class=\"item-checkbox__text\"\u003E" + (pug.escape(null == (pug_interp = opts.text) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fspan\u003E\u003Cdiv class=\"item-checkbox__content\"\u003E\u003Cspan class=\"item-checkbox__text\"\u003E" + (pug.escape(null == (pug_interp = opts.text) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+if ((opts.subtext)) {
+pug_html = pug_html + "\u003Cspan class=\"item-checkbox__subtext\"\u003E" + (pug.escape(null == (pug_interp = opts.subtext) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+}
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E";
 };
 
 
@@ -1552,7 +1499,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
 
 var title = 'Toxin';
 var description = 'Бронирование отелей';
-pug_html = pug_html + "\u003C!DOCTYPE html\u003E\u003Chtml lang=\"ru\"\u003E\u003Chead\u003E\u003Cmeta charset=\"UTF-8\"\u003E\u003Cmeta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"\u003E\u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003E\u003Ctitle\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Ftitle\u003E\u003Cmeta" + (" name=\"description\""+pug.attr("content", description, true, true)) + "\u003E\u003C\u002Fhead\u003E\u003Cbody" + (pug.attr("class", pug.classes([pageClass], [true]), false, true)) + "\u003E\u003Csvg display=\"none\" xmlns=\"http:\u002F\u002Fwww.w3.org\u002F2000\u002Fsvg\"\u003E\n\n  \u003Csymbol id ='expand-more'\u003E\n    \u003Cpath d=\"M11.3301 0.578125L12.7363 1.98438L6.73633 7.98438L0.736328 1.98438L2.14258 0.578125L6.73633 5.17188L11.3301 0.578125Z\"\u002F\u003E\n  \u003C\u002Fsymbol\u003E\n\n  \u003Csymbol id='phone'\u003E\n    \u003Cpath d=\"M0.766667 5.50834C1.39896 8.37759 2.83884 11.0061 4.91638 13.0836C6.99393 15.1612 9.62242 16.601 12.4917 17.2333C13.3936 17.415 14.3308 17.2556 15.1221 16.7861C15.9133 16.3166 16.5022 15.5703 16.775 14.6917L17.2 13.3583L13.0333 11.2833L11.05 13.2667C9.64082 12.6594 8.3555 11.7978 7.25833 10.725C6.20046 9.62438 5.35314 8.33929 4.75833 6.93334L6.71667 4.95001L4.64167 0.78334L3.30833 1.20834C2.42623 1.48129 1.67731 2.07282 1.20746 2.86772C0.737613 3.66261 0.580479 4.60394 0.766667 5.50834V5.50834Z\"  \u002F\u003E\n  \u003C\u002Fsymbol\u003E\n\n  \u003Csymbol id='person'\u003E\n    \u003Cpath d=\"M7.00001 7.33334C7.65928 7.33334 8.30375 7.13784 8.85191 6.77157C9.40007 6.4053 9.82732 5.8847 10.0796 5.27562C10.3319 4.66653 10.3979 3.99631 10.2693 3.34971C10.1407 2.7031 9.82321 2.10916 9.35703 1.64298C8.89086 1.17681 8.29691 0.85934 7.65031 0.730722C7.00371 0.602105 6.33349 0.668116 5.7244 0.920408C5.11531 1.1727 4.59472 1.59994 4.22844 2.14811C3.86217 2.69627 3.66668 3.34074 3.66668 4.00001C3.66668 4.88406 4.01787 5.73191 4.64299 6.35703C5.26811 6.98215 6.11596 7.33334 7.00001 7.33334ZM13.425 12.5C11.7192 10.7993 9.40874 9.84434 7.00001 9.84434C4.59128 9.84434 2.2808 10.7993 0.57501 12.5L0.333344 12.75V16.5H13.6667V12.75L13.425 12.5Z\" \u002F\u003E\n  \u003C\u002Fsymbol\u003E\n\n  \u003Csymbol id=\"tick\" \u003E\n    \u003Cpath d=\"M1.16666 4.58334L4.91666 8.33334L12.4167 0.833344\" stroke=\"\" stroke-width=\"1.8\"\u002F\u003E\n  \u003C\u002Fsymbol \u003E\n\u003C\u002Fsvg\u003E\n\u003Cdiv class=\"wrapper\"\u003E";
+pug_html = pug_html + "\u003C!DOCTYPE html\u003E\u003Chtml lang=\"ru\"\u003E\u003Chead\u003E\u003Cmeta charset=\"UTF-8\"\u003E\u003Cmeta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"\u003E\u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003E\u003Ctitle\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Ftitle\u003E\u003Cmeta" + (" name=\"description\""+pug.attr("content", description, true, true)) + "\u003E\u003C\u002Fhead\u003E\u003Cbody" + (pug.attr("class", pug.classes([pageClass], [true]), false, true)) + "\u003E\u003Csvg display=\"none\" xmlns=\"http:\u002F\u002Fwww.w3.org\u002F2000\u002Fsvg\"\u003E\n\n  \u003Csymbol id ='expand-more'\u003E\n    \u003Cpath d=\"M11.3301 0.578125L12.7363 1.98438L6.73633 7.98438L0.736328 1.98438L2.14258 0.578125L6.73633 5.17188L11.3301 0.578125Z\"\u002F\u003E\n  \u003C\u002Fsymbol\u003E\n\n  \u003Csymbol id ='arrow-forward'\u003E\n    \u003Cpath d=\"M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z\" \u002F\u003E\n  \u003C\u002Fsymbol\u003E\n\n\n  \u003Csymbol id='phone'\u003E\n    \u003Cpath d=\"M0.766667 5.50834C1.39896 8.37759 2.83884 11.0061 4.91638 13.0836C6.99393 15.1612 9.62242 16.601 12.4917 17.2333C13.3936 17.415 14.3308 17.2556 15.1221 16.7861C15.9133 16.3166 16.5022 15.5703 16.775 14.6917L17.2 13.3583L13.0333 11.2833L11.05 13.2667C9.64082 12.6594 8.3555 11.7978 7.25833 10.725C6.20046 9.62438 5.35314 8.33929 4.75833 6.93334L6.71667 4.95001L4.64167 0.78334L3.30833 1.20834C2.42623 1.48129 1.67731 2.07282 1.20746 2.86772C0.737613 3.66261 0.580479 4.60394 0.766667 5.50834V5.50834Z\"  \u002F\u003E\n  \u003C\u002Fsymbol\u003E\n\n  \u003Csymbol id='person'\u003E\n    \u003Cpath d=\"M7.00001 7.33334C7.65928 7.33334 8.30375 7.13784 8.85191 6.77157C9.40007 6.4053 9.82732 5.8847 10.0796 5.27562C10.3319 4.66653 10.3979 3.99631 10.2693 3.34971C10.1407 2.7031 9.82321 2.10916 9.35703 1.64298C8.89086 1.17681 8.29691 0.85934 7.65031 0.730722C7.00371 0.602105 6.33349 0.668116 5.7244 0.920408C5.11531 1.1727 4.59472 1.59994 4.22844 2.14811C3.86217 2.69627 3.66668 3.34074 3.66668 4.00001C3.66668 4.88406 4.01787 5.73191 4.64299 6.35703C5.26811 6.98215 6.11596 7.33334 7.00001 7.33334ZM13.425 12.5C11.7192 10.7993 9.40874 9.84434 7.00001 9.84434C4.59128 9.84434 2.2808 10.7993 0.57501 12.5L0.333344 12.75V16.5H13.6667V12.75L13.425 12.5Z\" \u002F\u003E\n  \u003C\u002Fsymbol\u003E\n\n  \u003Csymbol id=\"tick\" \u003E\n    \u003Cpath d=\"M1.16666 4.58334L4.91666 8.33334L12.4167 0.833344\" stroke=\"\" stroke-width=\"1.8\"\u002F\u003E\n  \u003C\u002Fsymbol \u003E\n\u003C\u002Fsvg\u003E\n\u003Cdiv class=\"wrapper\"\u003E";
 pug_mixins["header"]({
 				floatingBlock: false,
 				logo: {
@@ -1661,7 +1608,7 @@ pug_mixins["footer"]({
 					logoIcon: __webpack_require__(8985),
 					logoText: __webpack_require__(8003),
 				},
-				blockLogoText: 'Заполните заявку на сайте, укажите удобное для вас место приезда заправщика, сорт и количество топлива, которое хотите купить',
+				blockLogoText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 				navItems:[
 					{
 						title: "навигация", 
@@ -1701,9 +1648,9 @@ pug_mixins["footer"]({
 						placeholder: 'Email', 
 						tabindex: 1,
 						arrowSvg: {
-							name: 'arrow-forward', 
-							fill: "#BC9CFF",
-							opacity: null,
+							id:'#arrow-forward',
+							width: 17,
+							height: 18,
 						}
 					}
 				},
@@ -1926,7 +1873,7 @@ module.exports = __webpack_require__.p + "assets/img/fullMainImage.c7cae1db6f93a
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [671,953], function() { return __webpack_require__(3259); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [671,811], function() { return __webpack_require__(3259); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
