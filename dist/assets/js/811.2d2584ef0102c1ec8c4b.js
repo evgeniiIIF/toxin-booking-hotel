@@ -3,8 +3,8 @@
 /***/ 7946:
 /***/ (function() {
 
-var body = document.body;
-var prevTargets = [];
+const body = document.body;
+let prevTargets = [];
 function showBlock(opts) {
   (function Func() {
     this.trigger = opts.e.target.closest(opts.trigger);
@@ -34,9 +34,7 @@ function showBlock(opts) {
       if (this.target.querySelector(opts.openableElement).contains(opts.e.target)) {
         return;
       }
-      prevTargets.forEach(function (item) {
-        return item.classList.remove(opts.addClass);
-      });
+      prevTargets.forEach(item => item.classList.remove(opts.addClass));
       prevTargets = [];
       this.target.classList.toggle(opts.addClass);
       this.prev = this.target;
@@ -46,9 +44,7 @@ function showBlock(opts) {
           return;
         }
         this.prev.classList.remove(opts.addClass);
-        prevTargets.forEach(function (item) {
-          return item.classList.remove(opts.addClass);
-        });
+        prevTargets.forEach(item => item.classList.remove(opts.addClass));
         prevTargets = [];
       }
     }
@@ -70,10 +66,8 @@ body.addEventListener("click", showSubmenu);
 /***/ }),
 
 /***/ 6298:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module) {
 
-/* module decorator */ module = __webpack_require__.nmd(module);
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /*!
  * dist/inputmask
  * https://github.com/RobinHerbots/Inputmask
@@ -82,23 +76,20 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * Version: 5.0.8-beta.47
  */
 !function (e, t) {
-  if ("object" == ( false ? 0 : _typeof(exports)) && "object" == ( false ? 0 : _typeof(module))) module.exports = t();else if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
-		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else { var a, i; }
+  if (true) module.exports = t();else { var a, i; }
 }(self || this, function () {
   return function () {
     "use strict";
 
     var e = {
-        8741: function _(e, t) {
+        8741: function (e, t) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = void 0;
           var i = !("undefined" == typeof window || !window.document || !window.document.createElement);
           t.default = i;
         },
-        3976: function _(e, t, i) {
+        3976: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = void 0;
@@ -113,9 +104,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               escapeChar: "\\",
               mask: null,
               regex: null,
-              oncomplete: function oncomplete() {},
-              onincomplete: function onincomplete() {},
-              oncleared: function oncleared() {},
+              oncomplete: function () {},
+              onincomplete: function () {},
+              oncleared: function () {},
               repeat: 0,
               greedy: !1,
               autoUnmask: !1,
@@ -125,16 +116,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               insertModeVisual: !0,
               clearIncomplete: !1,
               alias: null,
-              onKeyDown: function onKeyDown() {},
+              onKeyDown: function () {},
               onBeforeMask: null,
-              onBeforePaste: function onBeforePaste(e, t) {
+              onBeforePaste: function (e, t) {
                 return "function" == typeof t.onBeforeMask ? t.onBeforeMask.call(this, e, t) : e;
               },
               onBeforeWrite: null,
               onUnMask: null,
               showMaskOnFocus: !0,
               showMaskOnHover: !0,
-              onKeyValidation: function onKeyValidation() {},
+              onKeyValidation: function () {},
               skipOptionalPartCharacter: " ",
               numericInput: !1,
               rightAlign: !1,
@@ -166,25 +157,25 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             };
           t.default = n;
         },
-        7392: function _(e, t) {
+        7392: function (e, t) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = void 0;
           t.default = {
             9: {
-              validator: "[0-9\uFF10-\uFF19]",
+              validator: "[0-9\uff10-\uff19]",
               definitionSymbol: "*"
             },
             a: {
-              validator: "[A-Za-z\u0410-\u044F\u0401\u0451\xC0-\xFF\xB5]",
+              validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
               definitionSymbol: "*"
             },
             "*": {
-              validator: "[0-9\uFF10-\uFF19A-Za-z\u0410-\u044F\u0401\u0451\xC0-\xFF\xB5]"
+              validator: "[0-9\uff10-\uff19A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]"
             }
           };
         },
-        253: function _(e, t) {
+        253: function (e, t) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = function (e, t, i) {
@@ -192,56 +183,42 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             e.__data = e.__data || {}, e.__data[t] = i;
           };
         },
-        3776: function _(e, t, i) {
+        3776: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.Event = void 0, t.off = function (e, t) {
             var i, a;
             function n(e, t, n) {
-              if (e in i == !0) if (a.removeEventListener ? a.removeEventListener(e, n, !1) : a.detachEvent && a.detachEvent("on" + e, n), "global" === t) for (var r in i[e]) {
-                i[e][r].splice(i[e][r].indexOf(n), 1);
-              } else i[e][t].splice(i[e][t].indexOf(n), 1);
+              if (e in i == !0) if (a.removeEventListener ? a.removeEventListener(e, n, !1) : a.detachEvent && a.detachEvent("on" + e, n), "global" === t) for (var r in i[e]) i[e][r].splice(i[e][r].indexOf(n), 1);else i[e][t].splice(i[e][t].indexOf(n), 1);
             }
             function r(e, a) {
               var n,
                 r,
                 o = [];
               if (e.length > 0) {
-                if (void 0 === t) for (n = 0, r = i[e][a].length; n < r; n++) {
-                  o.push({
-                    ev: e,
-                    namespace: a && a.length > 0 ? a : "global",
-                    handler: i[e][a][n]
-                  });
-                } else o.push({
+                if (void 0 === t) for (n = 0, r = i[e][a].length; n < r; n++) o.push({
+                  ev: e,
+                  namespace: a && a.length > 0 ? a : "global",
+                  handler: i[e][a][n]
+                });else o.push({
                   ev: e,
                   namespace: a && a.length > 0 ? a : "global",
                   handler: t
                 });
-              } else if (a.length > 0) for (var s in i) {
-                for (var l in i[s]) {
-                  if (l === a) if (void 0 === t) for (n = 0, r = i[s][l].length; n < r; n++) {
-                    o.push({
-                      ev: s,
-                      namespace: l,
-                      handler: i[s][l][n]
-                    });
-                  } else o.push({
-                    ev: s,
-                    namespace: l,
-                    handler: t
-                  });
-                }
-              }
+              } else if (a.length > 0) for (var s in i) for (var l in i[s]) if (l === a) if (void 0 === t) for (n = 0, r = i[s][l].length; n < r; n++) o.push({
+                ev: s,
+                namespace: l,
+                handler: i[s][l][n]
+              });else o.push({
+                ev: s,
+                namespace: l,
+                handler: t
+              });
               return o;
             }
             if (c(this[0]) && e) {
               i = this[0].eventRegistry, a = this[0];
-              for (var o = e.split(" "), s = 0; s < o.length; s++) {
-                for (var l = o[s].split("."), u = r(l[0], l[1]), f = 0, p = u.length; f < p; f++) {
-                  n(u[f].ev, u[f].namespace, u[f].handler);
-                }
-              }
+              for (var o = e.split(" "), s = 0; s < o.length; s++) for (var l = o[s].split("."), u = r(l[0], l[1]), f = 0, p = u.length; f < p; f++) n(u[f].ev, u[f].namespace, u[f].handler);
             }
             return this;
           }, t.on = function (e, t) {
@@ -277,13 +254,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   }
                   e.type && (0, n.default)(f, e), i.dispatchEvent(f);
                 } else (f = document.createEventObject()).eventType = l, f.detail = arguments[1], e.type && (0, n.default)(f, e), i.fireEvent("on" + f.eventType, f);
-              } else if (void 0 !== t[l]) if (arguments[0] = arguments[0].type ? arguments[0] : o.default.Event(arguments[0]), arguments[0].detail = arguments.slice(1), "global" === u) for (var h in t[l]) {
-                for (p = 0; p < t[l][h].length; p++) {
-                  t[l][h][p].apply(i, arguments);
-                }
-              } else for (p = 0; p < t[l][u].length; p++) {
-                t[l][u][p].apply(i, arguments);
-              }
+              } else if (void 0 !== t[l]) if (arguments[0] = arguments[0].type ? arguments[0] : o.default.Event(arguments[0]), arguments[0].detail = arguments.slice(1), "global" === u) for (var h in t[l]) for (p = 0; p < t[l][h].length; p++) t[l][h][p].apply(i, arguments);else for (p = 0; p < t[l][u].length; p++) t[l][u][p].apply(i, arguments);
             }
             return this;
           };
@@ -300,7 +271,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           function c(e) {
             return e instanceof Element;
           }
-          t.Event = a, "function" == typeof r.default.CustomEvent ? t.Event = a = r.default.CustomEvent : s.default && (t.Event = a = function a(e, t) {
+          t.Event = a, "function" == typeof r.default.CustomEvent ? t.Event = a = r.default.CustomEvent : s.default && (t.Event = a = function (e, t) {
             t = t || {
               bubbles: !1,
               cancelable: !1,
@@ -311,12 +282,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             return i.initCustomEvent(e, t.bubbles, t.cancelable, t.detail), i;
           }, a.prototype = r.default.Event.prototype);
         },
-        600: function _(e, t) {
+        600: function (e, t) {
           function i(e) {
-            return i = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (e) {
-              return _typeof(e);
+            return i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
+              return typeof e;
             } : function (e) {
-              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : _typeof(e);
+              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
             }, i(e);
           }
           Object.defineProperty(t, "__esModule", {
@@ -334,15 +305,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               f = !1;
             "boolean" == typeof l && (f = l, l = arguments[c] || {}, c++);
             "object" !== i(l) && "function" != typeof l && (l = {});
-            for (; c < u; c++) {
-              if (null != (t = arguments[c])) for (a in t) {
-                n = l[a], r = t[a], l !== r && (f && r && ("[object Object]" === Object.prototype.toString.call(r) || (o = Array.isArray(r))) ? (o ? (o = !1, s = n && Array.isArray(n) ? n : []) : s = n && "[object Object]" === Object.prototype.toString.call(n) ? n : {}, l[a] = e(f, s, r)) : void 0 !== r && (l[a] = r));
-              }
-            }
+            for (; c < u; c++) if (null != (t = arguments[c])) for (a in t) n = l[a], r = t[a], l !== r && (f && r && ("[object Object]" === Object.prototype.toString.call(r) || (o = Array.isArray(r))) ? (o ? (o = !1, s = n && Array.isArray(n) ? n : []) : s = n && "[object Object]" === Object.prototype.toString.call(n) ? n : {}, l[a] = e(f, s, r)) : void 0 !== r && (l[a] = r));
             return l;
           };
         },
-        4963: function _(e, t, i) {
+        4963: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = void 0;
@@ -367,7 +334,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           var u = c;
           t.default = u;
         },
-        9845: function _(e, t, i) {
+        9845: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.mobile = t.iphone = t.iemobile = t.ie = void 0;
@@ -382,7 +349,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             c = /iphone/i.test(r) && !l;
           t.iphone = c, t.iemobile = l, t.mobile = s, t.ie = o;
         },
-        7184: function _(e, t) {
+        7184: function (e, t) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = function (e) {
@@ -390,7 +357,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           };
           var i = new RegExp("(\\" + ["/", ".", "*", "+", "?", "|", "(", ")", "[", "]", "{", "}", "\\", "$", "^"].join("|\\") + ")", "gim");
         },
-        6030: function _(e, t, i) {
+        6030: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.EventHandlers = void 0;
@@ -413,10 +380,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               }(e)) || t && e && "number" == typeof e.length) {
                 i && (e = i);
                 var a = 0,
-                  n = function n() {};
+                  n = function () {};
                 return {
                   s: n,
-                  n: function n() {
+                  n: function () {
                     return a >= e.length ? {
                       done: !0
                     } : {
@@ -424,8 +391,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                       value: e[a++]
                     };
                   },
-                  e: function e(_e) {
-                    throw _e;
+                  e: function (e) {
+                    throw e;
                   },
                   f: n
                 };
@@ -436,17 +403,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               o = !0,
               s = !1;
             return {
-              s: function s() {
+              s: function () {
                 i = i.call(e);
               },
-              n: function n() {
+              n: function () {
                 var e = i.next();
                 return o = e.done, e;
               },
-              e: function e(_e2) {
-                s = !0, r = _e2;
+              e: function (e) {
+                s = !0, r = e;
               },
-              f: function f() {
+              f: function () {
                 try {
                   o || null == i.return || i.return();
                 } finally {
@@ -457,13 +424,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           function u(e, t) {
             (null == t || t > e.length) && (t = e.length);
-            for (var i = 0, a = new Array(t); i < t; i++) {
-              a[i] = e[i];
-            }
+            for (var i = 0, a = new Array(t); i < t; i++) a[i] = e[i];
             return a;
           }
           var f = {
-            keyEvent: function keyEvent(e, t, i, c, u) {
+            keyEvent: function (e, t, i, c, u) {
               var p = this.inputmask,
                 d = p.opts,
                 h = p.dependencyLib,
@@ -488,7 +453,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               }, 0)) : o.isSelection.call(p, y) ? d.insertMode = !d.insertMode : (d.insertMode = !d.insertMode, a.caret.call(p, m, y.begin, y.begin));
               return p.ignorable = d.ignorables.includes(k), f.keypressEvent.call(this, e, t, i, c, u);
             },
-            keypressEvent: function keypressEvent(e, t, i, r, l) {
+            keypressEvent: function (e, t, i, r, l) {
               var c = this.inputmask || this,
                 u = c.opts,
                 f = c.dependencyLib,
@@ -517,11 +482,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 h.trigger("change");
               }, 0));
             },
-            keyupEvent: function keyupEvent(e) {
+            keyupEvent: function (e) {
               var t = this.inputmask;
               t.isComposing && (e.keyCode !== n.keyCode.KEY_229 && e.key !== n.keys.Enter || t.$el.trigger("input"));
             },
-            pasteEvent: function pasteEvent(e) {
+            pasteEvent: function (e) {
               var t,
                 i = this.inputmask,
                 n = i.opts,
@@ -557,7 +522,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               }
               (0, s.checkVal)(this, !0, !1, f.toString().split(""), e), e.preventDefault();
             },
-            inputFallBackEvent: function inputFallBackEvent(e) {
+            inputFallBackEvent: function (e) {
               var t = this.inputmask,
                 i = t.opts,
                 o = t.dependencyLib;
@@ -577,32 +542,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   return i;
                 }(0, u, d);
                 var h = function (e, n, r) {
-                  for (var o, s, c, u = e.substr(0, r.begin).split(""), f = e.substr(r.begin).split(""), p = n.substr(0, r.begin).split(""), d = n.substr(r.begin).split(""), h = u.length >= p.length ? u.length : p.length, v = f.length >= d.length ? f.length : d.length, m = "", g = [], k = "~"; u.length < h;) {
-                    u.push(k);
-                  }
-                  for (; p.length < h;) {
-                    p.push(k);
-                  }
-                  for (; f.length < v;) {
-                    f.unshift(k);
-                  }
-                  for (; d.length < v;) {
-                    d.unshift(k);
-                  }
+                  for (var o, s, c, u = e.substr(0, r.begin).split(""), f = e.substr(r.begin).split(""), p = n.substr(0, r.begin).split(""), d = n.substr(r.begin).split(""), h = u.length >= p.length ? u.length : p.length, v = f.length >= d.length ? f.length : d.length, m = "", g = [], k = "~"; u.length < h;) u.push(k);
+                  for (; p.length < h;) p.push(k);
+                  for (; f.length < v;) f.unshift(k);
+                  for (; d.length < v;) d.unshift(k);
                   var y = u.concat(f),
                     b = p.concat(d);
-                  for (s = 0, o = y.length; s < o; s++) {
-                    switch (c = l.getPlaceholder.call(t, a.translatePosition.call(t, s)), m) {
-                      case "insertText":
-                        b[s - 1] === y[s] && r.begin == y.length - 1 && g.push(y[s]), s = o;
-                        break;
-                      case "insertReplacementText":
-                      case "deleteContentBackward":
-                        y[s] === k ? r.end++ : s = o;
-                        break;
-                      default:
-                        y[s] !== b[s] && (y[s + 1] !== k && y[s + 1] !== c && void 0 !== y[s + 1] || (b[s] !== c || b[s + 1] !== k) && b[s] !== k ? b[s + 1] === k && b[s] === y[s + 1] ? (m = "insertText", g.push(y[s]), r.begin--, r.end--) : y[s] !== c && y[s] !== k && (y[s + 1] === k || b[s] !== y[s] && b[s + 1] === y[s + 1]) ? (m = "insertReplacementText", g.push(y[s]), r.begin--) : y[s] === k ? (m = "deleteContentBackward", (a.isMask.call(t, a.translatePosition.call(t, s), !0) || b[s] === i.radixPoint) && r.end++) : s = o : (m = "insertText", g.push(y[s]), r.begin--, r.end--));
-                    }
+                  for (s = 0, o = y.length; s < o; s++) switch (c = l.getPlaceholder.call(t, a.translatePosition.call(t, s)), m) {
+                    case "insertText":
+                      b[s - 1] === y[s] && r.begin == y.length - 1 && g.push(y[s]), s = o;
+                      break;
+                    case "insertReplacementText":
+                    case "deleteContentBackward":
+                      y[s] === k ? r.end++ : s = o;
+                      break;
+                    default:
+                      y[s] !== b[s] && (y[s + 1] !== k && y[s + 1] !== c && void 0 !== y[s + 1] || (b[s] !== c || b[s + 1] !== k) && b[s] !== k ? b[s + 1] === k && b[s] === y[s + 1] ? (m = "insertText", g.push(y[s]), r.begin--, r.end--) : y[s] !== c && y[s] !== k && (y[s + 1] === k || b[s] !== y[s] && b[s + 1] === y[s + 1]) ? (m = "insertReplacementText", g.push(y[s]), r.begin--) : y[s] === k ? (m = "deleteContentBackward", (a.isMask.call(t, a.translatePosition.call(t, s), !0) || b[s] === i.radixPoint) && r.end++) : s = o : (m = "insertText", g.push(y[s]), r.begin--, r.end--));
                   }
                   return {
                     action: m,
@@ -630,33 +585,33 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 e.preventDefault();
               }
             },
-            compositionendEvent: function compositionendEvent(e) {
+            compositionendEvent: function (e) {
               var t = this.inputmask;
               t.isComposing = !1, t.$el.trigger("input");
             },
-            setValueEvent: function setValueEvent(e) {
+            setValueEvent: function (e) {
               var t = this.inputmask,
                 i = this,
                 n = e && e.detail ? e.detail[0] : arguments[1];
               void 0 === n && (n = i.inputmask._valueGet(!0)), (0, s.applyInputValue)(i, n), (e.detail && void 0 !== e.detail[1] || void 0 !== arguments[2]) && a.caret.call(t, i, e.detail ? e.detail[1] : arguments[2]);
             },
-            focusEvent: function focusEvent(e) {
+            focusEvent: function (e) {
               var t = this.inputmask,
                 i = t.opts,
                 n = this,
                 r = n.inputmask._valueGet();
               i.showMaskOnFocus && r !== a.getBuffer.call(t).join("") && (0, s.writeBuffer)(n, a.getBuffer.call(t), a.seekNext.call(t, a.getLastValidPosition.call(t))), !0 !== i.positionCaretOnTab || !1 !== t.mouseEnter || o.isComplete.call(t, a.getBuffer.call(t)) && -1 !== a.getLastValidPosition.call(t) || f.clickEvent.apply(n, [e, !0]), t.undoValue = t._valueGet(!0);
             },
-            invalidEvent: function invalidEvent(e) {
+            invalidEvent: function (e) {
               this.inputmask.validationEvent = !0;
             },
-            mouseleaveEvent: function mouseleaveEvent() {
+            mouseleaveEvent: function () {
               var e = this.inputmask,
                 t = e.opts,
                 i = this;
               e.mouseEnter = !1, t.clearMaskOnLostFocus && (i.inputmask.shadowRoot || i.ownerDocument).activeElement !== i && (0, s.HandleNativePlaceholder)(i, e.originalPlaceholder);
             },
-            clickEvent: function clickEvent(e, t) {
+            clickEvent: function (e, t) {
               var i = this.inputmask;
               i.clicked++;
               var n = this;
@@ -665,7 +620,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 void 0 !== r && a.caret.call(i, n, r);
               }
             },
-            cutEvent: function cutEvent(e) {
+            cutEvent: function (e) {
               var t = this.inputmask,
                 i = t.maskset,
                 r = this,
@@ -674,7 +629,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 u = t.isRTL ? c.reverse().join("") : c.join("");
               window.navigator.clipboard ? window.navigator.clipboard.writeText(u) : window.clipboardData && window.clipboardData.getData && window.clipboardData.setData("Text", u), o.handleRemove.call(t, r, n.keys.Delete, l), (0, s.writeBuffer)(r, a.getBuffer.call(t), i.p, e, t.undoValue !== t._valueGet(!0));
             },
-            blurEvent: function blurEvent(e) {
+            blurEvent: function (e) {
               var t = this.inputmask,
                 i = t.opts,
                 n = t.dependencyLib;
@@ -690,7 +645,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }, 0), i.clearIncomplete && (a.resetMaskSet.call(t), u = i.clearMaskOnLostFocus ? [] : a.getBufferTemplate.call(t).slice())), (0, s.writeBuffer)(l, u, void 0, e)), t.undoValue !== t._valueGet(!0) && (t.undoValue = t._valueGet(!0), r.trigger("change"));
               }
             },
-            mouseenterEvent: function mouseenterEvent() {
+            mouseenterEvent: function () {
               var e = this.inputmask,
                 t = e.opts,
                 i = this;
@@ -699,14 +654,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 e.placeholder !== n && i.placeholder !== e.originalPlaceholder && (e.originalPlaceholder = i.placeholder), t.showMaskOnHover && (0, s.HandleNativePlaceholder)(i, n);
               }
             },
-            submitEvent: function submitEvent() {
+            submitEvent: function () {
               var e = this.inputmask,
                 t = e.opts;
               e.undoValue !== e._valueGet(!0) && e.$el.trigger("change"), -1 === a.getLastValidPosition.call(e) && e._valueGet && e._valueGet() === a.getBufferTemplate.call(e).join("") && e._valueSet(""), t.clearIncomplete && !1 === o.isComplete.call(e, a.getBuffer.call(e)) && e._valueSet(""), t.removeMaskOnSubmit && (e._valueSet(e.unmaskedvalue(), !0), setTimeout(function () {
                 (0, s.writeBuffer)(e.el, a.getBuffer.call(e));
               }, 0));
             },
-            resetEvent: function resetEvent() {
+            resetEvent: function () {
               var e = this.inputmask;
               e.refreshValue = !0, setTimeout(function () {
                 (0, s.applyInputValue)(e.el, e._valueGet(!0));
@@ -715,7 +670,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           };
           t.EventHandlers = f;
         },
-        9716: function _(e, t, i) {
+        9716: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.EventRuler = void 0;
@@ -727,9 +682,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             o = i(8711),
             s = i(7760);
           var l = {
-            on: function on(e, t, i) {
+            on: function (e, t, i) {
               var a = e.inputmask.dependencyLib,
-                l = function l(t) {
+                l = function (t) {
                   t.originalEvent && (t = t.originalEvent || t, arguments[0] = t);
                   var l,
                     c = this,
@@ -764,7 +719,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 };
               ["submit", "reset"].includes(t) ? (l = l.bind(e), null !== e.form && a(e.form).on(t, l)) : a(e).on(t, l), e.inputmask.events[t] = e.inputmask.events[t] || [], e.inputmask.events[t].push(l);
             },
-            off: function off(e, t) {
+            off: function (e, t) {
               if (e.inputmask && e.inputmask.events) {
                 var i = e.inputmask.dependencyLib,
                   a = e.inputmask.events;
@@ -780,17 +735,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           };
           t.EventRuler = l;
         },
-        219: function _(e, t, i) {
+        219: function (e, t, i) {
           var a = p(i(2394)),
             n = i(2839),
             r = p(i(7184)),
             o = i(8711),
             s = i(4713);
           function l(e) {
-            return l = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (e) {
-              return _typeof(e);
+            return l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
+              return typeof e;
             } : function (e) {
-              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : _typeof(e);
+              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
             }, l(e);
           }
           function c(e, t) {
@@ -805,9 +760,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 o = !0,
                 s = !1;
               try {
-                for (i = i.call(e); !(o = (a = i.next()).done) && (r.push(a.value), !t || r.length !== t); o = !0) {
-                  ;
-                }
+                for (i = i.call(e); !(o = (a = i.next()).done) && (r.push(a.value), !t || r.length !== t); o = !0);
               } catch (e) {
                 s = !0, n = e;
               } finally {
@@ -831,9 +784,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           function u(e, t) {
             (null == t || t > e.length) && (t = e.length);
-            for (var i = 0, a = new Array(t); i < t; i++) {
-              a[i] = e[i];
-            }
+            for (var i = 0, a = new Array(t); i < t; i++) a[i] = e[i];
             return a;
           }
           function f(e, t) {
@@ -857,12 +808,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               var t, i, a;
               return t = e, (i = [{
                 key: "date",
-                get: function get() {
+                get: function () {
                   return void 0 === this._date && (this._date = new Date(1, 0, 1), this.initDateObject(void 0, this.opts)), this._date;
                 }
               }, {
                 key: "initDateObject",
-                value: function value(e, t) {
+                value: function (e, t) {
                   var i;
                   for (P(t).lastIndex = 0; i = P(t).exec(this.format);) {
                     var a = new RegExp("\\d+$").exec(i[0]),
@@ -881,7 +832,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
               }, {
                 key: "setValue",
-                value: function value(e, t, i, a, n) {
+                value: function (e, t, i, a, n) {
                   if (void 0 !== t && (e[a] = "ampm" === a ? t : t.replace(/[^0-9]/g, "0"), e["raw" + a] = t.replace(/\s/g, "_")), void 0 !== n) {
                     var r = e[a];
                     ("day" === a && 29 === parseInt(r) || "month" === a && 2 === parseInt(r)) && (29 !== parseInt(e.day) || 2 !== parseInt(e.month) || "" !== e.year && void 0 !== e.year || e._date.setFullYear(2012, 1, 29)), "day" === a && (m = !0, 0 === parseInt(r) && (r = 1)), "month" === a && (m = !0), "year" === a && (m = !0, r.length < 4 && (r = _(r, 4, !0))), "" === r || isNaN(r) || n.call(e._date, r), "ampm" === a && n.call(e._date, r);
@@ -889,12 +840,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
               }, {
                 key: "reset",
-                value: function value() {
+                value: function () {
                   this._date = new Date(1, 0, 1);
                 }
               }, {
                 key: "reInit",
-                value: function value() {
+                value: function () {
                   this._date = void 0, this.date;
                 }
               }]) && f(t.prototype, i), a && f(t, a), Object.defineProperty(t, "prototype", {
@@ -1004,12 +955,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             if (!e.tokenizer) {
               var t = [],
                 i = [];
-              for (var a in g) {
-                if (/\.*x$/.test(a)) {
-                  var n = a[0] + "\\d+";
-                  -1 === i.indexOf(n) && i.push(n);
-                } else -1 === t.indexOf(a[0]) && t.push(a[0]);
-              }
+              for (var a in g) if (/\.*x$/.test(a)) {
+                var n = a[0] + "\\d+";
+                -1 === i.indexOf(n) && i.push(n);
+              } else -1 === t.indexOf(a[0]) && t.push(a[0]);
               e.tokenizer = "(" + (i.length > 0 ? i.join("|") + "|" : "") + t.join("+|") + ")+?|.", e.tokenizer = new RegExp(e.tokenizer, "g");
             }
             return e.tokenizer;
@@ -1052,9 +1001,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             return s;
           }
           function _(e, t, i) {
-            for (e = String(e), t = t || 2; e.length < t;) {
-              e = i ? e + "0" : "0" + e;
-            }
+            for (e = String(e), t = t || 2; e.length < t;) e = i ? e + "0" : "0" + e;
             return e;
           }
           function M(e, t, i) {
@@ -1085,7 +1032,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           a.default.extendAliases({
             datetime: {
-              mask: function mask(e) {
+              mask: function (e) {
                 return e.numericInput = !1, g.S = e.i18n.ordinalSuffix.join("|"), e.inputFormat = k[e.inputFormat] || e.inputFormat, e.displayFormat = k[e.displayFormat] || e.displayFormat || e.inputFormat, e.outputFormat = k[e.outputFormat] || e.outputFormat || e.inputFormat, e.placeholder = "" !== e.placeholder ? e.placeholder : e.inputFormat.replace(/[[\]]/, ""), e.regex = S(e.inputFormat, void 0, e), e.min = M(e.min, e.inputFormat, e), e.max = M(e.max, e.inputFormat, e), null;
               },
               placeholder: "",
@@ -1100,7 +1047,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 monthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 ordinalSuffix: ["st", "nd", "rd", "th"]
               },
-              preValidation: function preValidation(e, t, i, a, n, r, o, s) {
+              preValidation: function (e, t, i, a, n, r, o, s) {
                 if (s) return !0;
                 if (isNaN(i) && e[t] !== i) {
                   var l = O(t, n);
@@ -1119,7 +1066,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
                 return !0;
               },
-              postValidation: function postValidation(e, t, i, a, n, r, o, l) {
+              postValidation: function (e, t, i, a, n, r, o, l) {
                 var c, u;
                 if (o) return !0;
                 if (!1 === a && (((c = O(t + 1, n)).targetMatch && c.targetMatchIndex === t && c.targetMatch[0].length > 1 && void 0 !== g[c.targetMatch[0]] || (c = O(t + 2, n)).targetMatch && c.targetMatchIndex === t + 1 && c.targetMatch[0].length > 1 && void 0 !== g[c.targetMatch[0]]) && (u = g[c.targetMatch[0]][0]), void 0 !== u && (void 0 !== r.validPositions[t + 1] && new RegExp(u).test(i + "0") ? (e[t] = i, e[t + 1] = "0", a = {
@@ -1132,9 +1079,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   var f = g[c.targetMatch[0]];
                   u = f[0];
                   var p = e.slice(c.targetMatchIndex, c.targetMatchIndex + c.targetMatch[0].length);
-                  if (!1 === new RegExp(u).test(p.join("")) && 2 === c.targetMatch[0].length && r.validPositions[c.targetMatchIndex] && r.validPositions[c.targetMatchIndex + 1] && (r.validPositions[c.targetMatchIndex + 1].input = "0"), "year" == f[2]) for (var d = s.getMaskTemplate.call(this, !1, 1, void 0, !0), h = t + 1; h < e.length; h++) {
-                    e[h] = d[h], delete r.validPositions[h];
-                  }
+                  if (!1 === new RegExp(u).test(p.join("")) && 2 === c.targetMatch[0].length && r.validPositions[c.targetMatchIndex] && r.validPositions[c.targetMatchIndex + 1] && (r.validPositions[c.targetMatchIndex + 1].input = "0"), "year" == f[2]) for (var d = s.getMaskTemplate.call(this, !1, 1, void 0, !0), h = t + 1; h < e.length; h++) e[h] = d[h], delete r.validPositions[h];
                 }
                 var m = a,
                   k = M(e.join(""), n.inputFormat, n);
@@ -1163,9 +1108,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     for (e.reset(), P(i).lastIndex = 0; r = P(i).exec(i.inputFormat);) {
                       var o;
                       if ((o = x(r)) && o[3]) {
-                        for (var s = o[1], l = e[o[2]], c = i.min[o[2]], u = i.max ? i.max[o[2]] : c, f = [], p = !1, d = 0; d < c.length; d++) {
-                          void 0 !== a.validPositions[d + r.index] || p ? (f[d] = l[d], p = p || l[d] > c[d]) : (f[d] = c[d], "year" === o[2] && l.length - 1 == d && c != u && (f = (parseInt(f.join("")) + 1).toString().split("")), "ampm" === o[2] && c != u && i.min.date.getTime() > e.date.getTime() && (f[d] = u[d]));
-                        }
+                        for (var s = o[1], l = e[o[2]], c = i.min[o[2]], u = i.max ? i.max[o[2]] : c, f = [], p = !1, d = 0; d < c.length; d++) void 0 !== a.validPositions[d + r.index] || p ? (f[d] = l[d], p = p || l[d] > c[d]) : (f[d] = c[d], "year" === o[2] && l.length - 1 == d && c != u && (f = (parseInt(f.join("")) + 1).toString().split("")), "ampm" === o[2] && c != u && i.min.date.getTime() > e.date.getTime() && (f[d] = u[d]));
                         s.call(e._date, f.join(""));
                       }
                     }
@@ -1181,16 +1124,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   pos: a.caret || a.pos
                 } : m;
               },
-              onKeyDown: function onKeyDown(e, t, i, a) {
+              onKeyDown: function (e, t, i, a) {
                 e.ctrlKey && e.key === n.keys.ArrowRight && (this.inputmask._valueSet(E(new Date(), a)), d(this).trigger("setvalue"));
               },
-              onUnMask: function onUnMask(e, t, i) {
+              onUnMask: function (e, t, i) {
                 return t ? S(i.outputFormat, M(e, i.inputFormat, i), i, !0) : t;
               },
-              casing: function casing(e, t, i, a) {
+              casing: function (e, t, i, a) {
                 return 0 == t.nativeDef.indexOf("[ap]") ? e.toLowerCase() : 0 == t.nativeDef.indexOf("[AP]") ? e.toUpperCase() : e;
               },
-              onBeforeMask: function onBeforeMask(e, t) {
+              onBeforeMask: function (e, t) {
                 return "[object Date]" === Object.prototype.toString.call(e) && (e = E(e, t)), e;
               },
               insertMode: !1,
@@ -1201,7 +1144,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             }
           });
         },
-        3851: function _(e, t, i) {
+        3851: function (e, t, i) {
           var a,
             n = (a = i(2394)) && a.__esModule ? a : {
               default: a
@@ -1210,11 +1153,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             o = i(4713);
           n.default.extendDefinitions({
             A: {
-              validator: "[A-Za-z\u0410-\u044F\u0401\u0451\xC0-\xFF\xB5]",
+              validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
               casing: "upper"
             },
             "&": {
-              validator: "[0-9A-Za-z\u0410-\u044F\u0401\u0451\xC0-\xFF\xB5]",
+              validator: "[0-9A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
               casing: "upper"
             },
             "#": {
@@ -1252,7 +1195,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   validator: l
                 }
               },
-              onUnMask: function onUnMask(e, t, i) {
+              onUnMask: function (e, t, i) {
                 return e;
               },
               inputmode: "decimal",
@@ -1261,12 +1204,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               }
             },
             email: {
-              mask: function mask(e) {
+              mask: function (e) {
                 var t = "*{1,64}[.*{1,64}][.*{1,64}][.*{1,63}]@-{1,63}.-{1,63}[.-{1,63}][.-{1,63}]",
                   i = t;
-                if (e.separator) for (var a = 0; a < e.quantifier; a++) {
-                  i += "[".concat(e.separator).concat(t, "]");
-                }
+                if (e.separator) for (var a = 0; a < e.quantifier; a++) i += "[".concat(e.separator).concat(t, "]");
                 return i;
               },
               greedy: !1,
@@ -1274,18 +1215,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               separator: null,
               quantifier: 5,
               skipOptionalPartCharacter: "",
-              onBeforePaste: function onBeforePaste(e, t) {
+              onBeforePaste: function (e, t) {
                 return (e = e.toLowerCase()).replace("mailto:", "");
               },
               definitions: {
                 "*": {
-                  validator: "[0-9\uFF11-\uFF19A-Za-z\u0410-\u044F\u0401\u0451\xC0-\xFF\xB5!#$%&'*+/=?^_`{|}~-]"
+                  validator: "[0-9\uff11-\uff19A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5!#$%&'*+/=?^_`{|}~-]"
                 },
                 "-": {
                   validator: "[0-9A-Za-z-]"
                 }
               },
-              onUnMask: function onUnMask(e, t, i) {
+              onUnMask: function (e, t, i) {
                 return e;
               },
               inputmode: "email"
@@ -1306,14 +1247,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             },
             ssn: {
               mask: "999-99-9999",
-              postValidation: function postValidation(e, t, i, a, n, s, l) {
+              postValidation: function (e, t, i, a, n, s, l) {
                 var c = o.getMaskTemplate.call(this, !0, r.getLastValidPosition.call(this), !0, !0);
                 return /^(?!219-09-9999|078-05-1120)(?!666|000|9.{2}).{3}-(?!00).{2}-(?!0{4}).{4}$/.test(c.join(""));
               }
             }
           });
         },
-        207: function _(e, t, i) {
+        207: function (e, t, i) {
           var a = s(i(2394)),
             n = s(i(7184)),
             r = i(8711),
@@ -1325,9 +1266,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           var l = a.default.dependencyLib;
           function c(e, t) {
-            for (var i = "", n = 0; n < e.length; n++) {
-              a.default.prototype.definitions[e.charAt(n)] || t.definitions[e.charAt(n)] || t.optionalmarker[0] === e.charAt(n) || t.optionalmarker[1] === e.charAt(n) || t.quantifiermarker[0] === e.charAt(n) || t.quantifiermarker[1] === e.charAt(n) || t.groupmarker[0] === e.charAt(n) || t.groupmarker[1] === e.charAt(n) || t.alternatormarker === e.charAt(n) ? i += "\\" + e.charAt(n) : i += e.charAt(n);
-            }
+            for (var i = "", n = 0; n < e.length; n++) a.default.prototype.definitions[e.charAt(n)] || t.definitions[e.charAt(n)] || t.optionalmarker[0] === e.charAt(n) || t.optionalmarker[1] === e.charAt(n) || t.quantifiermarker[0] === e.charAt(n) || t.quantifiermarker[1] === e.charAt(n) || t.groupmarker[0] === e.charAt(n) || t.groupmarker[1] === e.charAt(n) || t.alternatormarker === e.charAt(n) ? i += "\\" + e.charAt(n) : i += e.charAt(n);
             return i;
           }
           function u(e, t, i, a) {
@@ -1335,19 +1274,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               var n = e.indexOf(i.radixPoint),
                 r = !1;
               i.negationSymbol.back === e[e.length - 1] && (r = !0, e.length--), -1 === n && (e.push(i.radixPoint), n = e.length - 1);
-              for (var o = 1; o <= t; o++) {
-                isFinite(e[n + o]) || (e[n + o] = "0");
-              }
+              for (var o = 1; o <= t; o++) isFinite(e[n + o]) || (e[n + o] = "0");
             }
             return r && e.push(i.negationSymbol.back), e;
           }
           function f(e, t) {
             var i = 0;
-            for (var a in "+" === e && (i = r.seekNext.call(this, t.validPositions.length - 1)), t.tests) {
-              if ((a = parseInt(a)) >= i) for (var n = 0, o = t.tests[a].length; n < o; n++) {
-                if ((void 0 === t.validPositions[a] || "-" === e) && t.tests[a][n].match.def === e) return a + (void 0 !== t.validPositions[a] && "-" !== e ? 1 : 0);
-              }
-            }
+            for (var a in "+" === e && (i = r.seekNext.call(this, t.validPositions.length - 1)), t.tests) if ((a = parseInt(a)) >= i) for (var n = 0, o = t.tests[a].length; n < o; n++) if ((void 0 === t.validPositions[a] || "-" === e) && t.tests[a][n].match.def === e) return a + (void 0 !== t.validPositions[a] && "-" !== e ? 1 : 0);
             return i;
           }
           function p(e, t) {
@@ -1373,7 +1306,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           a.default.extendAliases({
             numeric: {
-              mask: function mask(e) {
+              mask: function (e) {
                 e.repeat = 0, e.groupSeparator === e.radixPoint && e.digits && "0" !== e.digits && ("." === e.radixPoint ? e.groupSeparator = "," : "," === e.radixPoint ? e.groupSeparator = "." : e.groupSeparator = ""), " " === e.groupSeparator && (e.skipOptionalPartCharacter = void 0), e.placeholder.length > 1 && (e.placeholder = e.placeholder.charAt(0)), "radixFocus" === e.positionCaretOnClick && "" === e.placeholder && (e.positionCaretOnClick = "lvp");
                 var t = "0",
                   i = e.radixPoint;
@@ -1388,7 +1321,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   void 0 === e.parseMinMaxOptions && (null !== e.min && (e.min = e.min.toString().replace(new RegExp((0, n.default)(e.groupSeparator), "g"), ""), "," === e.radixPoint && (e.min = e.min.replace(e.radixPoint, ".")), e.min = isFinite(e.min) ? parseFloat(e.min) : NaN, isNaN(e.min) && (e.min = Number.MIN_VALUE)), null !== e.max && (e.max = e.max.toString().replace(new RegExp((0, n.default)(e.groupSeparator), "g"), ""), "," === e.radixPoint && (e.max = e.max.replace(e.radixPoint, ".")), e.max = isFinite(e.max) ? parseFloat(e.max) : NaN, isNaN(e.max) && (e.max = Number.MAX_VALUE)), e.parseMinMaxOptions = "done");
                 }(e), "" !== e.radixPoint && e.substituteRadixPoint && (e.substitutes["." == e.radixPoint ? "," : "."] = e.radixPoint), r;
               },
-              _mask: function _mask(e) {
+              _mask: function (e) {
                 return "(" + e.groupSeparator + "999){+|1}";
               },
               digits: "*",
@@ -1435,21 +1368,21 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   definitionSymbol: "9"
                 },
                 9: {
-                  validator: "[0-9\uFF10-\uFF19\u0660-\u0669\u06F0-\u06F9]",
+                  validator: "[0-9\uff10-\uff19\u0660-\u0669\u06f0-\u06f9]",
                   definitionSymbol: "*"
                 },
                 "+": {
-                  validator: function validator(e, t, i, a, n) {
+                  validator: function (e, t, i, a, n) {
                     return n.allowMinus && ("-" === e || e === n.negationSymbol.front);
                   }
                 },
                 "-": {
-                  validator: function validator(e, t, i, a, n) {
+                  validator: function (e, t, i, a, n) {
                     return n.allowMinus && e === n.negationSymbol.back;
                   }
                 }
               },
-              preValidation: function preValidation(e, t, i, a, n, r, o, s) {
+              preValidation: function (e, t, i, a, n, r, o, s) {
                 if (!1 !== n.__financeInput && i === n.radixPoint) return !1;
                 var l = e.indexOf(n.radixPoint),
                   c = t;
@@ -1509,7 +1442,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   rewritePosition: t
                 };
               },
-              postValidation: function postValidation(e, t, i, a, n, r, o) {
+              postValidation: function (e, t, i, a, n, r, o) {
                 if (!1 === a) return a;
                 if (o) return !0;
                 if (null !== n.min || null !== n.max) {
@@ -1524,16 +1457,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
                 return a;
               },
-              onUnMask: function onUnMask(e, t, i) {
+              onUnMask: function (e, t, i) {
                 if ("" === t && !0 === i.nullable) return t;
                 var a = e.replace(i.prefix, "");
                 return a = (a = a.replace(i.suffix, "")).replace(new RegExp((0, n.default)(i.groupSeparator), "g"), ""), "" !== i.placeholder.charAt(0) && (a = a.replace(new RegExp(i.placeholder.charAt(0), "g"), "0")), i.unmaskAsNumber ? ("" !== i.radixPoint && -1 !== a.indexOf(i.radixPoint) && (a = a.replace(n.default.call(this, i.radixPoint), ".")), a = (a = a.replace(new RegExp("^" + (0, n.default)(i.negationSymbol.front)), "-")).replace(new RegExp((0, n.default)(i.negationSymbol.back) + "$"), ""), Number(a)) : a;
               },
-              isComplete: function isComplete(e, t) {
+              isComplete: function (e, t) {
                 var i = (t.numericInput ? e.slice().reverse() : e).join("");
                 return i = (i = (i = (i = (i = i.replace(new RegExp("^" + (0, n.default)(t.negationSymbol.front)), "-")).replace(new RegExp((0, n.default)(t.negationSymbol.back) + "$"), "")).replace(t.prefix, "")).replace(t.suffix, "")).replace(new RegExp((0, n.default)(t.groupSeparator) + "([0-9]{3})", "g"), "$1"), "," === t.radixPoint && (i = i.replace((0, n.default)(t.radixPoint), ".")), isFinite(i);
               },
-              onBeforeMask: function onBeforeMask(e, t) {
+              onBeforeMask: function (e, t) {
                 var i = t.radixPoint || ",";
                 isFinite(t.digits) && (t.digits = parseInt(t.digits)), "number" != typeof e && "number" !== t.inputType || "" === i || (e = e.toString().replace(".", i));
                 var a = "-" === e.charAt(0) || e.charAt(0) === t.negationSymbol.front,
@@ -1553,15 +1486,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
                 return a && "-" !== e.charAt(0) && (e = "-" + e), u(e.toString().split(""), c, t, l).join("");
               },
-              onBeforeWrite: function onBeforeWrite(e, t, i, a) {
+              onBeforeWrite: function (e, t, i, a) {
                 function r(e, t) {
                   if (!1 !== a.__financeInput || t) {
                     var i = e.indexOf(a.radixPoint);
                     -1 !== i && e.splice(i, 1);
                   }
-                  if ("" !== a.groupSeparator) for (; -1 !== (i = e.indexOf(a.groupSeparator));) {
-                    e.splice(i, 1);
-                  }
+                  if ("" !== a.groupSeparator) for (; -1 !== (i = e.indexOf(a.groupSeparator));) e.splice(i, 1);
                   return e;
                 }
                 var o, s;
@@ -1570,9 +1501,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     a = i ? i[2] : "",
                     r = !1;
                   return a && (a = a.split(t.radixPoint.charAt(0))[0], r = new RegExp("^[0" + t.groupSeparator + "]*").exec(a)), !(!r || !(r[0].length > 1 || r[0].length > 0 && r[0].length < a.length)) && r;
-                }(t, a))) for (var c = t.join("").lastIndexOf(s[0].split("").reverse().join("")) - (s[0] == s.input ? 0 : 1), f = s[0] == s.input ? 1 : 0, p = s[0].length - f; p > 0; p--) {
-                  delete this.maskset.validPositions[c + p], delete t[c + p];
-                }
+                }(t, a))) for (var c = t.join("").lastIndexOf(s[0].split("").reverse().join("")) - (s[0] == s.input ? 0 : 1), f = s[0] == s.input ? 1 : 0, p = s[0].length - f; p > 0; p--) delete this.maskset.validPositions[c + p], delete t[c + p];
                 if (e) switch (e.type) {
                   case "blur":
                   case "checkval":
@@ -1604,7 +1533,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
                 return o;
               },
-              onKeyDown: function onKeyDown(e, t, i, a) {
+              onKeyDown: function (e, t, i, a) {
                 var n,
                   r = l(this);
                 if (3 != e.location) {
@@ -1657,7 +1586,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             },
             indianns: {
               alias: "numeric",
-              _mask: function _mask(e) {
+              _mask: function (e) {
                 return "(" + e.groupSeparator + "99){*|1}(" + e.groupSeparator + "999){1|1}";
               },
               groupSeparator: ",",
@@ -1668,7 +1597,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             }
           });
         },
-        9380: function _(e, t, i) {
+        9380: function (e, t, i) {
           var a;
           Object.defineProperty(t, "__esModule", {
             value: !0
@@ -1678,7 +1607,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }).default ? window : {};
           t.default = n;
         },
-        7760: function _(e, t, i) {
+        7760: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.HandleNativePlaceholder = function (e, t) {
@@ -1701,9 +1630,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               if (void 0 === e.inputmask) return e.value;
               e.inputmask && e.inputmask.refreshValue && c(e, e.inputmask._valueGet(!0));
             }
-            for (var n = [], o = a.validPositions, s = 0, l = o.length; s < l; s++) {
-              o[s] && o[s].match && (1 != o[s].match.static || Array.isArray(a.metadata) && !0 !== o[s].generatedInput) && n.push(o[s].input);
-            }
+            for (var n = [], o = a.validPositions, s = 0, l = o.length; s < l; s++) o[s] && o[s].match && (1 != o[s].match.static || Array.isArray(a.metadata) && !0 !== o[s].generatedInput) && n.push(o[s].input);
             var u = 0 === n.length ? "" : (t.isRTL ? n.reverse() : n).join("");
             if ("function" == typeof i.onUnMask) {
               var f = (t.isRTL ? r.getBuffer.call(t).slice().reverse() : r.getBuffer.call(t)).join("");
@@ -1724,9 +1651,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           function u(e) {
             e.length = 0;
-            for (var t, i = n.getMaskTemplate.call(this, !0, 0, !0, void 0, !0); void 0 !== (t = i.shift());) {
-              e.push(t);
-            }
+            for (var t, i = n.getMaskTemplate.call(this, !0, 0, !0, void 0, !0); void 0 !== (t = i.shift());) e.push(t);
             return e;
           }
           function f(e, t, i, a, s) {
@@ -1753,9 +1678,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 a.key = e, v += e;
                 var o = r.getLastValidPosition.call(c, void 0, !0);
                 !function (e, t) {
-                  for (var i = n.getMaskTemplate.call(c, !0, 0).slice(e, r.seekNext.call(c, e, !1, !1)).join("").replace(/'/g, ""), a = i.indexOf(t); a > 0 && " " === i[a - 1];) {
-                    a--;
-                  }
+                  for (var i = n.getMaskTemplate.call(c, !0, 0).slice(e, r.seekNext.call(c, e, !1, !1)).join("").replace(/'/g, ""), a = i.indexOf(t); a > 0 && " " === i[a - 1];) a--;
                   var o = 0 === a && !r.isMask.call(c, e) && (n.getTest.call(c, e).match.nativeDef === t.charAt(0) || !0 === n.getTest.call(c, e).match.static && n.getTest.call(c, e).match.nativeDef === "'" + t.charAt(0) || " " === n.getTest.call(c, e).match.nativeDef && (n.getTest.call(c, e + 1).match.nativeDef === t.charAt(0) || !0 === n.getTest.call(c, e + 1).match.static && n.getTest.call(c, e + 1).match.nativeDef === "'" + t.charAt(0)));
                   if (!o && a > 0 && !r.isMask.call(c, e, !1, !0)) {
                     var s = r.seekNext.call(c, e);
@@ -1804,7 +1727,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             }
           }
         },
-        2394: function _(e, t, i) {
+        2394: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = void 0, i(7149), i(3194);
@@ -1821,10 +1744,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             d = m(i(3976)),
             h = m(i(8741));
           function v(e) {
-            return v = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (e) {
-              return _typeof(e);
+            return v = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
+              return typeof e;
             } : function (e) {
-              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : _typeof(e);
+              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
             }, v(e);
           }
           function m(e) {
@@ -1853,7 +1776,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             get isRTL() {
               return this.opts.isRTL || this.opts.numericInput;
             },
-            mask: function mask(e) {
+            mask: function (e) {
               var t = this;
               return "string" == typeof e && (e = g.getElementById(e) || g.querySelectorAll(e)), (e = e.nodeName ? [e] : Array.isArray(e) ? e : [].slice.call(e)).forEach(function (e, i) {
                 var s = n.default.extend(!0, {}, t.opts);
@@ -1868,18 +1791,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                       c,
                       u,
                       f = e.getAttribute(a);
-                    if (f && "" !== f && (f = f.replace(/'/g, '"'), l = JSON.parse("{" + f + "}")), l) for (u in c = void 0, l) {
-                      if ("alias" === u.toLowerCase()) {
-                        c = l[u];
-                        break;
-                      }
+                    if (f && "" !== f && (f = f.replace(/'/g, '"'), l = JSON.parse("{" + f + "}")), l) for (u in c = void 0, l) if ("alias" === u.toLowerCase()) {
+                      c = l[u];
+                      break;
                     }
                     for (s in o("alias", c), i.alias && b(i.alias, i, t), t) {
-                      if (l) for (u in c = void 0, l) {
-                        if (u.toLowerCase() === s.toLowerCase()) {
-                          c = l[u];
-                          break;
-                        }
+                      if (l) for (u in c = void 0, l) if (u.toLowerCase() === s.toLowerCase()) {
+                        c = l[u];
+                        break;
                       }
                       o(s, c);
                     }
@@ -1893,17 +1812,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
               }), e && e[0] && e[0].inputmask || this;
             },
-            option: function option(e, t) {
+            option: function (e, t) {
               return "string" == typeof e ? this.opts[e] : "object" === v(e) ? (n.default.extend(this.userOptions, e), this.el && !0 !== t && this.mask(this.el), this) : void 0;
             },
-            unmaskedvalue: function unmaskedvalue(e) {
+            unmaskedvalue: function (e) {
               if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), void 0 === this.el || void 0 !== e) {
                 var t = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, e, this.opts) || e).split("");
                 u.checkVal.call(this, void 0, !1, !1, t), "function" == typeof this.opts.onBeforeWrite && this.opts.onBeforeWrite.call(this, void 0, l.getBuffer.call(this), 0, this.opts);
               }
               return u.unmaskedvalue.call(this, this.el);
             },
-            remove: function remove() {
+            remove: function () {
               if (this.el) {
                 n.default.data(this.el, k, null);
                 var e = this.opts.autoUnmask ? (0, u.unmaskedvalue)(this.el) : this._valueGet(this.opts.autoUnmask);
@@ -1915,16 +1834,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               }
               return this.el;
             },
-            getemptymask: function getemptymask() {
+            getemptymask: function () {
               return this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), (this.isRTL ? l.getBufferTemplate.call(this).reverse() : l.getBufferTemplate.call(this)).join("");
             },
-            hasMaskedValue: function hasMaskedValue() {
+            hasMaskedValue: function () {
               return !this.opts.autoUnmask;
             },
-            isComplete: function isComplete() {
+            isComplete: function () {
               return this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), c.isComplete.call(this, l.getBuffer.call(this));
             },
-            getmetadata: function getmetadata() {
+            getmetadata: function () {
               if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), Array.isArray(this.maskset.metadata)) {
                 var e = s.getMaskTemplate.call(this, !0, 0, !1).join("");
                 return this.maskset.metadata.forEach(function (t) {
@@ -1933,17 +1852,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               }
               return this.maskset.metadata;
             },
-            isValid: function isValid(e) {
+            isValid: function (e) {
               if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), e) {
                 var t = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, e, this.opts) || e).split("");
                 u.checkVal.call(this, void 0, !0, !1, t);
               } else e = this.isRTL ? l.getBuffer.call(this).slice().reverse().join("") : l.getBuffer.call(this).join("");
-              for (var i = l.getBuffer.call(this), a = l.determineLastRequiredPosition.call(this), n = i.length - 1; n > a && !l.isMask.call(this, n); n--) {
-                ;
-              }
+              for (var i = l.getBuffer.call(this), a = l.determineLastRequiredPosition.call(this), n = i.length - 1; n > a && !l.isMask.call(this, n); n--);
               return i.splice(a, n + 1 - a), c.isComplete.call(this, i) && e === (this.isRTL ? l.getBuffer.call(this).slice().reverse().join("") : l.getBuffer.call(this).join(""));
             },
-            format: function format(e, t) {
+            format: function (e, t) {
               this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache);
               var i = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, e, this.opts) || e).split("");
               u.checkVal.call(this, void 0, !0, !1, i);
@@ -1953,7 +1870,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 metadata: this.getmetadata()
               } : a;
             },
-            setValue: function setValue(e) {
+            setValue: function (e) {
               this.el && (0, n.default)(this.el).trigger("setvalue", [e]);
             },
             analyseMask: o.analyseMask
@@ -1981,12 +1898,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           var x = y;
           t.default = x;
         },
-        5296: function _(e, t, i) {
+        5296: function (e, t, i) {
           function a(e) {
-            return a = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (e) {
-              return _typeof(e);
+            return a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
+              return typeof e;
             } : function (e) {
-              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : _typeof(e);
+              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
             }, a(e);
           }
           var n = h(i(9380)),
@@ -2008,7 +1925,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           function c(e) {
             var t = "function" == typeof Map ? new Map() : void 0;
-            return c = function c(e) {
+            return c = function (e) {
               if (null === e || (i = e, -1 === Function.toString.call(i).indexOf("[native code]"))) return e;
               var i;
               if ("function" != typeof e) throw new TypeError("Super expression must either be null or a function");
@@ -2101,9 +2018,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     mode: "closed"
                   }),
                   a = v.createElement("input");
-                for (var n in a.type = "text", i.appendChild(a), t) {
-                  Object.prototype.hasOwnProperty.call(t, n) && a.setAttribute(t[n], e.getAttribute(t[n]));
-                }
+                for (var n in a.type = "text", i.appendChild(a), t) Object.prototype.hasOwnProperty.call(t, n) && a.setAttribute(t[n], e.getAttribute(t[n]));
                 var o = new r.default();
                 return o.dataAttribute = "", o.mask(a), a.inputmask.shadowRoot = i, e;
               }
@@ -2114,7 +2029,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             n.default.customElements.define("input-mask", m);
           }
         },
-        2839: function _(e, t) {
+        2839: function (e, t) {
           function i(e, t) {
             return function (e) {
               if (Array.isArray(e)) return e;
@@ -2127,9 +2042,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 o = !0,
                 s = !1;
               try {
-                for (i = i.call(e); !(o = (a = i.next()).done) && (r.push(a.value), !t || r.length !== t); o = !0) {
-                  ;
-                }
+                for (i = i.call(e); !(o = (a = i.next()).done) && (r.push(a.value), !t || r.length !== t); o = !0);
               } catch (e) {
                 s = !0, n = e;
               } finally {
@@ -2153,9 +2066,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           function a(e, t) {
             (null == t || t > e.length) && (t = e.length);
-            for (var i = 0, a = new Array(t); i < t; i++) {
-              a[i] = e[i];
-            }
+            for (var i = 0, a = new Array(t); i < t; i++) a[i] = e[i];
             return a;
           }
           Object.defineProperty(t, "__esModule", {
@@ -2222,7 +2133,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             }, {});
           t.keys = o;
         },
-        2391: function _(e, t, i) {
+        2391: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.analyseMask = function (e, t, i) {
@@ -2299,9 +2210,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               if (v.length > 0) {
                 if (k(l = v[v.length - 1], o), l.isAlternator) {
                   c = v.pop();
-                  for (var e = 0; e < c.matches.length; e++) {
-                    c.matches[e].isGroup && (c.matches[e].isGroup = !1);
-                  }
+                  for (var e = 0; e < c.matches.length; e++) c.matches[e].isGroup && (c.matches[e].isGroup = !1);
                   v.length > 0 ? (l = v[v.length - 1]).matches.push(c) : h.matches.push(c);
                 }
               } else k(h, o);
@@ -2314,9 +2223,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               if ((s = v.pop()).openGroup = !1, void 0 !== s) {
                 if (v.length > 0) {
                   if ((l = v[v.length - 1]).matches.push(s), l.isAlternator) {
-                    for (var e = (c = v.pop()).matches[0].matches ? c.matches[0].matches.length : 1, t = 0; t < c.matches.length; t++) {
-                      c.matches[t].isGroup = !1, c.matches[t].alternatorGroup = !1, null === i.keepStatic && e < (c.matches[t].matches ? c.matches[t].matches.length : 1) && (i.keepStatic = !0), e = c.matches[t].matches ? c.matches[t].matches.length : 1;
-                    }
+                    for (var e = (c = v.pop()).matches[0].matches ? c.matches[0].matches.length : 1, t = 0; t < c.matches.length; t++) c.matches[t].isGroup = !1, c.matches[t].alternatorGroup = !1, null === i.keepStatic && e < (c.matches[t].matches ? c.matches[t].matches.length : 1) && (i.keepStatic = !0), e = c.matches[t].matches ? c.matches[t].matches.length : 1;
                     v.length > 0 ? (l = v[v.length - 1]).matches.push(c) : h.matches.push(c);
                   }
                 } else h.matches.push(s);
@@ -2400,9 +2307,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               }
             }
             g && x();
-            for (; v.length > 0;) {
-              s = v.pop(), h.matches.push(s);
-            }
+            for (; v.length > 0;) s = v.pop(), h.matches.push(s);
             h.matches.length > 0 && (!function e(a) {
               a && a.matches && a.matches.forEach(function (n, r) {
                 var o = a.matches[r + 1];
@@ -2410,15 +2315,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               });
             }(h), m.push(h));
             (i.numericInput || i.isRTL) && function e(t) {
-              for (var a in t.matches = t.matches.reverse(), t.matches) {
-                if (Object.prototype.hasOwnProperty.call(t.matches, a)) {
-                  var n = parseInt(a);
-                  if (t.matches[a].isQuantifier && t.matches[n + 1] && t.matches[n + 1].isGroup) {
-                    var r = t.matches[a];
-                    t.matches.splice(a, 1), t.matches.splice(n + 1, 0, r);
-                  }
-                  void 0 !== t.matches[a].matches ? t.matches[a] = e(t.matches[a]) : t.matches[a] = ((o = t.matches[a]) === i.optionalmarker[0] ? o = i.optionalmarker[1] : o === i.optionalmarker[1] ? o = i.optionalmarker[0] : o === i.groupmarker[0] ? o = i.groupmarker[1] : o === i.groupmarker[1] && (o = i.groupmarker[0]), o);
+              for (var a in t.matches = t.matches.reverse(), t.matches) if (Object.prototype.hasOwnProperty.call(t.matches, a)) {
+                var n = parseInt(a);
+                if (t.matches[a].isQuantifier && t.matches[n + 1] && t.matches[n + 1].isGroup) {
+                  var r = t.matches[a];
+                  t.matches.splice(a, 1), t.matches.splice(n + 1, 0, r);
                 }
+                void 0 !== t.matches[a].matches ? t.matches[a] = e(t.matches[a]) : t.matches[a] = ((o = t.matches[a]) === i.optionalmarker[0] ? o = i.optionalmarker[1] : o === i.optionalmarker[1] ? o = i.optionalmarker[0] : o === i.groupmarker[0] ? o = i.groupmarker[1] : o === i.groupmarker[1] && (o = i.groupmarker[0]), o);
               }
               var o;
               return t;
@@ -2483,7 +2386,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             };
           }
         },
-        157: function _(e, t, i) {
+        157: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.mask = function () {
@@ -2516,9 +2419,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                         get: l,
                         set: c,
                         configurable: !0
-                      })) : "input" !== t.tagName.toLowerCase() && (a = function a() {
+                      })) : "input" !== t.tagName.toLowerCase() && (a = function () {
                         return this.textContent;
-                      }, s = function s(e) {
+                      }, s = function (e) {
                         this.textContent = e;
                       }, Object.defineProperty(t, "value", {
                         get: l,
@@ -2532,9 +2435,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     return e.isRTL && !0 !== t ? a.call(this.el).split("").reverse().join("") : a.call(this.el);
                   }, t.inputmask._valueSet = function (t, i) {
                     s.call(this.el, null == t ? "" : !0 !== i && e.isRTL ? t.split("").reverse().join("") : t);
-                  }, void 0 === a && (a = function a() {
+                  }, void 0 === a && (a = function () {
                     return this.value;
-                  }, s = function s(e) {
+                  }, s = function (e) {
                     this.value = e;
                   }, function (t) {
                     if (u.valHooks && (void 0 === u.valHooks[t] || !0 !== u.valHooks[t].inputmaskpatch)) {
@@ -2545,7 +2448,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                           return e.value = t, e;
                         };
                       u.valHooks[t] = {
-                        get: function get(t) {
+                        get: function (t) {
                           if (t.inputmask) {
                             if (t.inputmask.opts.autoUnmask) return t.inputmask.unmaskedvalue();
                             var r = a(t);
@@ -2553,7 +2456,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                           }
                           return a(t);
                         },
-                        set: function set(e, t) {
+                        set: function (e, t) {
                           var i = o(e, t);
                           return e.inputmask && (0, r.applyInputValue)(e, t), i;
                         },
@@ -2588,7 +2491,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             l = i(7215),
             c = i(6030);
         },
-        9695: function _(e, t) {
+        9695: function (e, t) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.default = function (e, t, i, a) {
@@ -2598,9 +2501,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             };
           };
         },
-        3194: function _() {
+        3194: function () {
           Array.prototype.includes || Object.defineProperty(Array.prototype, "includes", {
-            value: function value(e, t) {
+            value: function (e, t) {
               if (null == this) throw new TypeError('"this" is null or not defined');
               var i = Object(this),
                 a = i.length >>> 0;
@@ -2613,12 +2516,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             }
           });
         },
-        7149: function _() {
+        7149: function () {
           function e(t) {
-            return e = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (e) {
-              return _typeof(e);
+            return e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
+              return typeof e;
             } : function (e) {
-              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : _typeof(e);
+              return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
             }, e(t);
           }
           "function" != typeof Object.getPrototypeOf && (Object.getPrototypeOf = "object" === e("test".__proto__) ? function (e) {
@@ -2627,7 +2530,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             return e.constructor.prototype;
           });
         },
-        8711: function _(e, t, i) {
+        8711: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.caret = function (e, t, i, a, n) {
@@ -2666,13 +2569,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               p = {},
               d = s.validPositions[f],
               h = void 0 !== d ? d.locator.slice() : void 0;
-            for (t = f + 1; t < c.length; t++) {
-              i = a.getTestTemplate.call(r, t, h, t - 1), h = i.locator.slice(), p[t] = l.extend(!0, {}, i);
-            }
+            for (t = f + 1; t < c.length; t++) i = a.getTestTemplate.call(r, t, h, t - 1), h = i.locator.slice(), p[t] = l.extend(!0, {}, i);
             var v = d && void 0 !== d.alternation ? d.locator[d.alternation] : void 0;
-            for (t = u - 1; t > f && ((i = p[t]).match.optionality || i.match.optionalQuantifier && i.match.newBlockMarker || v && (v !== p[t].locator[d.alternation] && 1 != i.match.static || !0 === i.match.static && i.locator[d.alternation] && n.checkAlternationMatch.call(r, i.locator[d.alternation].toString().split(","), v.toString().split(",")) && "" !== a.getTests.call(r, t)[0].def)) && c[t] === a.getPlaceholder.call(r, t, i.match); t--) {
-              u--;
-            }
+            for (t = u - 1; t > f && ((i = p[t]).match.optionality || i.match.optionalQuantifier && i.match.newBlockMarker || v && (v !== p[t].locator[d.alternation] && 1 != i.match.static || !0 === i.match.static && i.locator[d.alternation] && n.checkAlternationMatch.call(r, i.locator[d.alternation].toString().split(","), v.toString().split(",")) && "" !== a.getTests.call(r, t)[0].def)) && c[t] === a.getPlaceholder.call(r, t, i.match); t--) u--;
             return e ? {
               l: u,
               def: p[u] ? p[u].match : void 0
@@ -2704,9 +2603,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                         if (e < l.call(n, -1)) return !0;
                         var i = r.call(n).indexOf(u.radixPoint);
                         if (-1 !== i) {
-                          for (var o = 0, s = t.length; o < s; o++) {
-                            if (t[o] && i < o && t[o].input !== a.getPlaceholder.call(n, o)) return !1;
-                          }
+                          for (var o = 0, s = t.length; o < s; o++) if (t[o] && i < o && t[o].input !== a.getPlaceholder.call(n, o)) return !1;
                           return !0;
                         }
                       }
@@ -2745,9 +2642,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             var i = this,
               n = e - 1;
             if (e <= 0) return 0;
-            for (; n > 0 && (!0 === t && (!0 !== a.getTest.call(i, n).match.newBlockMarker || !s.call(i, n, void 0, !0)) || !0 !== t && !s.call(i, n, void 0, !0));) {
-              n--;
-            }
+            for (; n > 0 && (!0 === t && (!0 !== a.getTest.call(i, n).match.newBlockMarker || !s.call(i, n, void 0, !0)) || !0 !== t && !s.call(i, n, void 0, !0));) n--;
             return n;
           }, t.translatePosition = c;
           var a = i(4713),
@@ -2762,9 +2657,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               r = -1,
               o = i || a.validPositions;
             void 0 === e && (e = -1);
-            for (var s = 0, l = o.length; s < l; s++) {
-              o[s] && (t || !0 !== o[s].generatedInput) && (s <= e && (n = s), s >= e && (r = s));
-            }
+            for (var s = 0, l = o.length; s < l; s++) o[s] && (t || !0 !== o[s].generatedInput) && (s <= e && (n = s), s >= e && (r = s));
             return -1 === n || n == e ? r : -1 == r || e - n < r - e ? n : r;
           }
           function s(e, t, i) {
@@ -2787,9 +2680,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           function l(e, t, i) {
             var n = this;
             void 0 === i && (i = !0);
-            for (var r = e + 1; "" !== a.getTest.call(n, r).match.def && (!0 === t && (!0 !== a.getTest.call(n, r).match.newBlockMarker || !s.call(n, r, void 0, !0)) || !0 !== t && !s.call(n, r, void 0, i));) {
-              r++;
-            }
+            for (var r = e + 1; "" !== a.getTest.call(n, r).match.def && (!0 === t && (!0 !== a.getTest.call(n, r).match.newBlockMarker || !s.call(n, r, void 0, !0)) || !0 !== t && !s.call(n, r, void 0, i));) r++;
             return r;
           }
           function c(e) {
@@ -2798,7 +2689,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             return !this.isRTL || "number" != typeof e || t.greedy && "" === t.placeholder || !i || (e = this._valueGet().length - e) < 0 && (e = 0), e;
           }
         },
-        4713: function _(e, t, i) {
+        4713: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.determineTestTemplate = c, t.getDecisionTaker = o, t.getMaskTemplate = function (e, t, i, a, n) {
@@ -2832,9 +2723,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             };
           function r(e, t) {
             var i = (null != e.alternation ? e.mloc[o(e)] : e.locator).join("");
-            if ("" !== i) for (; i.length < t;) {
-              i += "0";
-            }
+            if ("" !== i) for (; i.length < t;) i += "0";
             return i;
           }
           function o(e) {
@@ -2850,9 +2739,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 var r,
                   o = p.call(this, e),
                   s = [];
-                if (o.length > 1 + ("" === o[o.length - 1].match.def ? 1 : 0)) for (var l = 0; l < o.length; l++) {
-                  if ("" !== o[l].match.def && !0 !== o[l].match.optionality && !0 !== o[l].match.optionalQuantifier && (!0 === o[l].match.static || void 0 === r || !1 !== o[l].match.fn.test(r.match.def, n, e, !0, a)) && (s.push(o[l]), !0 === o[l].match.static && (r = o[l]), s.length > 1 && /[0-9a-bA-Z]/.test(s[0].match.def))) return a.placeholder.charAt(e % a.placeholder.length);
-                }
+                if (o.length > 1 + ("" === o[o.length - 1].match.def ? 1 : 0)) for (var l = 0; l < o.length; l++) if ("" !== o[l].match.def && !0 !== o[l].match.optionality && !0 !== o[l].match.optionalQuantifier && (!0 === o[l].match.static || void 0 === r || !1 !== o[l].match.fn.test(r.match.def, n, e, !0, a)) && (s.push(o[l]), !0 === o[l].match.static && (r = o[l]), s.length > 1 && /[0-9a-bA-Z]/.test(s[0].match.def))) return a.placeholder.charAt(e % a.placeholder.length);
               }
               return t.def;
             }
@@ -2892,11 +2779,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
           function f(e, t, i) {
             function a(e) {
-              for (var t, i = [], a = -1, n = 0, r = e.length; n < r; n++) {
-                if ("-" === e.charAt(n)) for (t = e.charCodeAt(n + 1); ++a < t;) {
-                  i.push(String.fromCharCode(a));
-                } else a = e.charCodeAt(n), i.push(e.charAt(n));
-              }
+              for (var t, i = [], a = -1, n = 0, r = e.length; n < r; n++) if ("-" === e.charAt(n)) for (t = e.charCodeAt(n + 1); ++a < t;) i.push(String.fromCharCode(a));else a = e.charCodeAt(n), i.push(e.charAt(n));
               return i.join("");
             }
             return e.match.def === t.match.nativeDef || !(!(i.regex || e.match.fn instanceof RegExp && t.match.fn instanceof RegExp) || !0 === e.match.static || !0 === t.match.static) && -1 !== a(t.match.fn.toString().replace(/[[\]/]/g, "")).indexOf(a(e.match.fn.toString().replace(/[[\]/]/g, "")));
@@ -2939,20 +2822,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 function x(e, t) {
                   var i = e.alternation,
                     a = void 0 === t || i === t.alternation && -1 === e.locator[i].toString().indexOf(t.locator[i]);
-                  if (!a && i > t.alternation) for (var n = t.alternation; n < i; n++) {
-                    if (e.locator[n] !== t.locator[n]) {
-                      i = n, a = !0;
-                      break;
-                    }
+                  if (!a && i > t.alternation) for (var n = t.alternation; n < i; n++) if (e.locator[n] !== t.locator[n]) {
+                    i = n, a = !0;
+                    break;
                   }
                   if (a) {
                     e.mloc = e.mloc || {};
                     var r = e.locator[i];
                     if (void 0 !== r) {
                       if ("string" == typeof r && (r = r.split(",")[0]), void 0 === e.mloc[r] && (e.mloc[r] = e.locator.slice()), void 0 !== t) {
-                        for (var o in t.mloc) {
-                          "string" == typeof o && (o = o.split(",")[0]), void 0 === e.mloc[o] && (e.mloc[o] = t.mloc[o]);
-                        }
+                        for (var o in t.mloc) "string" == typeof o && (o = o.split(",")[0]), void 0 === e.mloc[o] && (e.mloc[o] = t.mloc[o]);
                         e.locator[i] = Object.keys(e.mloc).join(",");
                       }
                       return !0;
@@ -2963,9 +2842,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 }
                 function P(e, t) {
                   if (e.locator.length !== t.locator.length) return !1;
-                  for (var i = e.alternation + 1; i < e.locator.length; i++) {
-                    if (e.locator[i] !== t.locator[i]) return !1;
-                  }
+                  for (var i = e.alternation + 1; i < e.locator.length; i++) if (e.locator[i] !== t.locator[i]) return !1;
                   return !0;
                 }
                 if (h > e + u._maxTestPos) throw "Inputmask: There is probably an error in your mask definition or in the code. Create an issue on github with an example of the mask you are using. " + l.mask;
@@ -3002,9 +2879,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                         B = h,
                         C = i.slice(),
                         R = [];
-                      if ("string" == typeof j) R = j.split(",");else for (A = 0; A < M.matches.length; A++) {
-                        R.push(A.toString());
-                      }
+                      if ("string" == typeof j) R = j.split(",");else for (A = 0; A < M.matches.length; A++) R.push(A.toString());
                       if (void 0 !== l.excludes[e]) {
                         for (var L = R.slice(), F = 0, I = l.excludes[e].length; F < I; F++) {
                           var V = l.excludes[e][F].toString().split(":");
@@ -3061,12 +2936,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 } else h++;
                 var W, J;
               }
-              for (var c = i.length > 0 ? i.shift() : 0; c < t.matches.length; c++) {
-                if (!0 !== t.matches[c].isQuantifier) {
-                  var d = s(t.matches[c], [c].concat(r), o);
-                  if (d && h === e) return d;
-                  if (h > e) break;
-                }
+              for (var c = i.length > 0 ? i.shift() : 0; c < t.matches.length; c++) if (!0 !== t.matches[c].isQuantifier) {
+                var d = s(t.matches[c], [c].concat(r), o);
+                if (d && h === e) return d;
+                if (h > e) break;
               }
             }
             function b(e, t) {
@@ -3077,9 +2950,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             }
             if (e > -1) {
               if (void 0 === t) {
-                for (var x, P = e - 1; void 0 === (x = l.validPositions[P] || l.tests[P]) && P > -1;) {
-                  P--;
-                }
+                for (var x, P = e - 1; void 0 === (x = l.validPositions[P] || l.tests[P]) && P > -1;) P--;
                 void 0 !== x && P > -1 && (v = function (e, t) {
                   var i,
                     a = [];
@@ -3110,18 +2981,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             }), r;
           }
         },
-        7215: function _(e, t, i) {
+        7215: function (e, t, i) {
           Object.defineProperty(t, "__esModule", {
             value: !0
           }), t.alternate = s, t.checkAlternationMatch = function (e, t, i) {
-            for (var a, n = this.opts.greedy ? t : t.slice(0, 1), r = !1, o = void 0 !== i ? i.split(",") : [], s = 0; s < o.length; s++) {
-              -1 !== (a = e.indexOf(o[s])) && e.splice(a, 1);
-            }
-            for (var l = 0; l < e.length; l++) {
-              if (n.includes(e[l])) {
-                r = !0;
-                break;
-              }
+            for (var a, n = this.opts.greedy ? t : t.slice(0, 1), r = !1, o = void 0 !== i ? i.split(",") : [], s = 0; s < o.length; s++) -1 !== (a = e.indexOf(o[s])) && e.splice(a, 1);
+            for (var l = 0; l < e.length; l++) if (n.includes(e[l])) {
+              r = !0;
+              break;
             }
             return r;
           }, t.handleRemove = function (e, t, i, o, l) {
@@ -3175,25 +3042,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               E = !1,
               O = !1,
               T = void 0 !== o ? o : r.getLastValidPosition.call(x);
-            if (l && (y = l.begin, b = l.end, l.begin > l.end && (y = l.end, b = l.begin)), -1 === T && void 0 === o) c = 0, u = (d = a.getTest.call(x, c)).alternation;else for (; T >= 0; T--) {
-              if ((p = S.validPositions[T]) && void 0 !== p.alternation) {
-                if (d && d.locator[p.alternation] !== p.locator[p.alternation]) break;
-                c = T, u = S.validPositions[c].alternation, d = p;
-              }
+            if (l && (y = l.begin, b = l.end, l.begin > l.end && (y = l.end, b = l.begin)), -1 === T && void 0 === o) c = 0, u = (d = a.getTest.call(x, c)).alternation;else for (; T >= 0; T--) if ((p = S.validPositions[T]) && void 0 !== p.alternation) {
+              if (d && d.locator[p.alternation] !== p.locator[p.alternation]) break;
+              c = T, u = S.validPositions[c].alternation, d = p;
             }
             if (void 0 !== u) {
               m = parseInt(c), S.excludes[m] = S.excludes[m] || [], !0 !== e && S.excludes[m].push((0, a.getDecisionTaker)(d) + ":" + d.alternation);
               var D = [],
                 j = -1;
-              for (h = m; h < r.getLastValidPosition.call(x, void 0, !0) + 1; h++) {
-                -1 === j && e <= h && void 0 !== t && (D.push(t), j = D.length - 1), (v = S.validPositions[h]) && !0 !== v.generatedInput && (void 0 === l || h < y || h >= b) && D.push(v.input), delete S.validPositions[h];
-              }
+              for (h = m; h < r.getLastValidPosition.call(x, void 0, !0) + 1; h++) -1 === j && e <= h && void 0 !== t && (D.push(t), j = D.length - 1), (v = S.validPositions[h]) && !0 !== v.generatedInput && (void 0 === l || h < y || h >= b) && D.push(v.input), delete S.validPositions[h];
               for (-1 === j && void 0 !== t && (D.push(t), j = D.length - 1); void 0 !== S.excludes[m] && S.excludes[m].length < 10;) {
-                for (S.tests = {}, r.resetMaskSet.call(x, !0), E = !0, h = 0; h < D.length && (g = E.caret || r.getLastValidPosition.call(x, void 0, !0) + 1, k = D[h], E = f.call(x, g, k, !1, n, !0)); h++) {
-                  h === j && (O = E), 1 == e && E && (O = {
-                    caretPos: h
-                  });
-                }
+                for (S.tests = {}, r.resetMaskSet.call(x, !0), E = !0, h = 0; h < D.length && (g = E.caret || r.getLastValidPosition.call(x, void 0, !0) + 1, k = D[h], E = f.call(x, g, k, !1, n, !0)); h++) h === j && (O = E), 1 == e && E && (O = {
+                  caretPos: h
+                });
                 if (E) break;
                 if (r.resetMaskSet.call(x), d = a.getTest.call(x, m), S.validPositions = P.extend(!0, [], _), S.tests = P.extend(!0, {}, M), !S.excludes[m]) {
                   O = s.call(x, e, t, i, n, m - 1, l);
@@ -3204,9 +3065,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                   O = s.call(x, e, t, i, n, m - 1, l);
                   break;
                 }
-                for (S.excludes[m].push(A + ":" + d.alternation), h = m; h < r.getLastValidPosition.call(x, void 0, !0) + 1; h++) {
-                  delete S.validPositions[h];
-                }
+                for (S.excludes[m].push(A + ":" + d.alternation), h = m; h < r.getLastValidPosition.call(x, void 0, !0) + 1; h++) delete S.validPositions[h];
               }
             }
             return O && !1 === w.keepStatic || delete S.excludes[m], O;
@@ -3307,20 +3166,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             void 0 !== e.begin && (x = g.isRTL ? e.end : e.begin);
             var S = !0,
               _ = k.extend(!0, {}, b.validPositions);
-            if (!1 === y.keepStatic && void 0 !== b.excludes[x] && !0 !== o && !0 !== n) for (var M = x; M < (g.isRTL ? e.begin : e.end); M++) {
-              void 0 !== b.excludes[M] && (b.excludes[M] = void 0, delete b.tests[M]);
-            }
+            if (!1 === y.keepStatic && void 0 !== b.excludes[x] && !0 !== o && !0 !== n) for (var M = x; M < (g.isRTL ? e.begin : e.end); M++) void 0 !== b.excludes[M] && (b.excludes[M] = void 0, delete b.tests[M]);
             if ("function" == typeof y.preValidation && !0 !== n && !0 !== p && (S = P(S = y.preValidation.call(g, r.getBuffer.call(g), x, t, u.call(g, e), y, b, e, i || o))), !0 === S) {
               if (S = w(x, t, i), (!i || !0 === n) && !1 === S && !0 !== p) {
                 var E = b.validPositions[x];
                 if (!E || !0 !== E.match.static || E.match.def !== t && t !== y.skipOptionalPartCharacter) {
                   if (y.insertMode || void 0 === b.validPositions[r.seekNext.call(g, x)] || e.end > x) {
                     var O = !1;
-                    if (b.jitOffset[x] && void 0 === b.validPositions[r.seekNext.call(g, x)] && !1 !== (S = f.call(g, x + b.jitOffset[x], t, !0, !0)) && (!0 !== o && (S.caret = x), O = !0), e.end > x && (b.validPositions[x] = void 0), !O && !r.isMask.call(g, x, y.keepStatic && 0 === x)) for (var T = x + 1, D = r.seekNext.call(g, x, !1, 0 !== x); T <= D; T++) {
-                      if (!1 !== (S = w(T, t, i))) {
-                        S = h.call(g, x, void 0 !== S.pos ? S.pos : T) || S, x = T;
-                        break;
-                      }
+                    if (b.jitOffset[x] && void 0 === b.validPositions[r.seekNext.call(g, x)] && !1 !== (S = f.call(g, x + b.jitOffset[x], t, !0, !0)) && (!0 !== o && (S.caret = x), O = !0), e.end > x && (b.validPositions[x] = void 0), !O && !r.isMask.call(g, x, y.keepStatic && 0 === x)) for (var T = x + 1, D = r.seekNext.call(g, x, !1, 0 !== x); T <= D; T++) if (!1 !== (S = w(T, t, i))) {
+                      S = h.call(g, x, void 0 !== S.pos ? S.pos : T) || S, x = T;
+                      break;
                     }
                   }
                 } else S = {
@@ -3366,9 +3221,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               begin: 0,
               end: 0
             }, !1).begin;else {
-              for (a = e; a < t; a++) {
-                delete l.validPositions[a];
-              }
+              for (a = e; a < t; a++) delete l.validPositions[a];
               n = e;
             }
             var d = new u.Event("keypress");
@@ -3383,9 +3236,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             var n = this,
               o = this.maskset,
               s = this.dependencyLib;
-            if (void 0 === e) for (e = t - 1; e > 0 && !o.validPositions[e]; e--) {
-              ;
-            }
+            if (void 0 === e) for (e = t - 1; e > 0 && !o.validPositions[e]; e--);
             for (var l = e; l < t; l++) {
               if (void 0 === o.validPositions[l] && !r.isMask.call(n, l, !1)) if (0 == l ? a.getTest.call(n, l) : o.validPositions[l - 1]) {
                 var c = a.getTests.call(n, l).slice();
@@ -3423,9 +3274,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               var g,
                 k = c.extend(!0, {}, s.validPositions),
                 y = r.getLastValidPosition.call(o, void 0, !0);
-              for (s.p = h, g = y; g >= h; g--) {
-                delete s.validPositions[g], void 0 === t && delete s.tests[g + 1];
-              }
+              for (s.p = h, g = y; g >= h; g--) delete s.validPositions[g], void 0 === t && delete s.tests[g + 1];
               var b,
                 x,
                 P = n,
@@ -3487,10 +3336,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ 1700:
 /***/ (function() {
 
-var canvas = document.getElementById("C1");
+const canvas = document.getElementById("C1");
 if (canvas) {
-  var ctx = canvas.getContext("2d");
-  var pi = Math.PI;
+  const ctx = canvas.getContext("2d");
+  const pi = Math.PI;
   ctx.beginPath();
   ctx.font = "700 24px Arial";
   ctx.fillStyle = "#BC9CFF";
@@ -3502,12 +3351,12 @@ if (canvas) {
   ctx.fillStyle = "#BC9CFF";
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
-  var text = ctx.measureText("голосов");
+  const text = ctx.measureText("голосов");
   text.width = 70;
   ctx.fillText("голосов", canvas.width / 2, 75);
   ctx.beginPath();
   ctx.lineWidth = "4";
-  var gradOne = ctx.createLinearGradient(60, 60, 120, 40);
+  const gradOne = ctx.createLinearGradient(60, 60, 120, 40);
   gradOne.addColorStop(0, "#6FCF97");
   gradOne.addColorStop(1, "#66D2EA");
   ctx.strokeStyle = gradOne;
@@ -3515,7 +3364,7 @@ if (canvas) {
   ctx.stroke();
   ctx.beginPath();
   ctx.lineWidth = "4";
-  var gradTwo = ctx.createLinearGradient(30, 20, 60, 90);
+  const gradTwo = ctx.createLinearGradient(30, 20, 60, 90);
   gradTwo.addColorStop(0, "#FFE39C");
   gradTwo.addColorStop(1, "#FFBA9C");
   ctx.strokeStyle = gradTwo;
@@ -3523,7 +3372,7 @@ if (canvas) {
   ctx.stroke();
   ctx.beginPath();
   ctx.lineWidth = "4";
-  var gradThree = ctx.createLinearGradient(30, 20, 60, 90);
+  const gradThree = ctx.createLinearGradient(30, 20, 60, 90);
   gradThree.addColorStop(0, "#BC9CFF");
   gradThree.addColorStop(1, "#8BA4F9");
   ctx.strokeStyle = gradThree;
@@ -3540,15 +3389,15 @@ if (canvas) {
 
 
 (function () {
-  var dropdownLists = document.querySelectorAll(".js-dropdown");
+  const dropdownLists = document.querySelectorAll(".js-dropdown");
   if (dropdownLists.length) {
-    var currentDropdownInput;
-    var currentDropdown;
-    var body = document.body;
-    var prevDropdown;
-    dropdownLists.forEach(function (dropdown) {
-      var inputs = dropdown.querySelectorAll(".js-dropdown__button");
-      inputs.forEach(function (currentInput) {
+    let currentDropdownInput;
+    let currentDropdown;
+    let body = document.body;
+    let prevDropdown;
+    dropdownLists.forEach(dropdown => {
+      let inputs = dropdown.querySelectorAll(".js-dropdown__button");
+      inputs.forEach(currentInput => {
         currentInput.addEventListener("focus", init);
         currentInput.addEventListener("mouseover", init);
         currentInput.addEventListener("click", toggleDropdown);
@@ -3609,27 +3458,27 @@ var index_es = __webpack_require__(1808);
 
 // import "../../assets/img/./pages/search-room/localStorage";
 
-var airDatepickerCalendars = document.querySelectorAll(".js-air-datepicker-calendar");
-var allDatepickers = [];
-airDatepickerCalendars.forEach(function (airDatepickerCalendar) {
-  var airDatepickerCalendarMenu = airDatepickerCalendar.querySelector(".js-air-datepicker-calendar__menu");
-  var dropdownOne = airDatepickerCalendar.querySelector(".js-dropdown__button [data-id='drop1']");
-  var dropdownTwo = airDatepickerCalendar.querySelector(".js-dropdown__button [data-id='drop2']");
-  var dropdownThree = document.querySelector(".js-dropdown__button [data-id='drop3']");
+const airDatepickerCalendars = document.querySelectorAll(".js-air-datepicker-calendar");
+const allDatepickers = [];
+airDatepickerCalendars.forEach(airDatepickerCalendar => {
+  const airDatepickerCalendarMenu = airDatepickerCalendar.querySelector(".js-air-datepicker-calendar__menu");
+  const dropdownOne = airDatepickerCalendar.querySelector(".js-dropdown__button [data-id='drop1']");
+  const dropdownTwo = airDatepickerCalendar.querySelector(".js-dropdown__button [data-id='drop2']");
+  const dropdownThree = document.querySelector(".js-dropdown__button [data-id='drop3']");
 
   // <button for calendar>
-  var apply = {
+  let apply = {
     content: "применить",
     className: "custom-apply-classname",
     type: "button",
-    onClick: function onClick(dp) {
-      var dropdown = dp.$el.closest(".js-dropdown.dropdown--menu-open");
+    onClick: dp => {
+      let dropdown = dp.$el.closest(".js-dropdown.dropdown--menu-open");
       dropdown.classList.remove("dropdown--menu-open");
     }
   };
 
   // </button for calendar>
-  var calendar = new index_es/* default */.Z(airDatepickerCalendarMenu, {
+  const calendar = new index_es/* default */.Z(airDatepickerCalendarMenu, {
     range: true,
     // selectedDates: ["2022-10-22", "2022-10-23"],
     // selectedDates: dropdownThree ? [localStorage.getItem("dateFrom"), localStorage.getItem("dateTo")] : false,
@@ -3645,16 +3494,16 @@ airDatepickerCalendars.forEach(function (airDatepickerCalendar) {
     disableNavWhenOutOfRange: true,
     dynamicRange: true,
     buttons: ["clear", apply],
-    prevHtml: "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M17.0156 8.01562V9.98438H4.82812L10.4062 15.6094L9 17.0156L0.984375 9L9 0.984375L10.4062 2.39062L4.82812 8.01562H17.0156Z\" fill=\"#BC9CFF\"/></svg>",
-    nextHtml: "<svg width=\"17\" height=\"18\" viewBox=\"0 0 17 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z\" fill=\"#BC9CFF\"/></svg>",
-    onSelect: function onSelect(date) {
+    prevHtml: `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0156 8.01562V9.98438H4.82812L10.4062 15.6094L9 17.0156L0.984375 9L9 0.984375L10.4062 2.39062L4.82812 8.01562H17.0156Z" fill="#BC9CFF"/></svg>`,
+    nextHtml: `<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z" fill="#BC9CFF"/></svg>`,
+    onSelect(date) {
       function getSelectedDates(i) {
         if (date.formattedDate.length == 2) {
-          var d = date.formattedDate[i];
+          const d = date.formattedDate[i];
           localStorage.setItem("dateFromOrigin", date.formattedDate[0]);
           localStorage.setItem("dateToOrigin", date.formattedDate[1]);
-          var arr = d.split(".");
-          return "".concat(arr[2], "-").concat(arr[1], "-").concat(arr[0]);
+          const arr = d.split(".");
+          return `${arr[2]}-${arr[1]}-${arr[0]}`;
         }
       }
       // localStorage share1
@@ -3683,9 +3532,9 @@ airDatepickerCalendars.forEach(function (airDatepickerCalendar) {
   // localStorage.clear();
 
   // <button for calendar>
-  var buttonClear = airDatepickerCalendar.querySelector(".air-datepicker-button");
+  let buttonClear = airDatepickerCalendar.querySelector(".air-datepicker-button");
   buttonClear.addEventListener("click", clearDropdownInputValue);
-  airDatepickerCalendar.querySelectorAll(".air-datepicker-button").forEach(function (button) {
+  airDatepickerCalendar.querySelectorAll(".air-datepicker-button").forEach(button => {
     button.setAttribute("type", "button");
   });
   function clearDropdownInputValue() {
@@ -3716,10 +3565,10 @@ if (slider) {
     }
   });
   slider.noUiSlider.on("update", function (values, handle) {
-    var rangeSliderValues = document.querySelector(".range-slider__values");
-    var value1 = Math.round(values[0]);
-    var value2 = Math.round(values[1]);
-    rangeSliderValues.innerHTML = "".concat(value1, "\u20BD - ").concat(value2, "\u20BD");
+    let rangeSliderValues = document.querySelector(".range-slider__values");
+    let value1 = Math.round(values[0]);
+    let value2 = Math.round(values[1]);
+    rangeSliderValues.innerHTML = `${value1}₽ - ${value2}₽`;
   });
 }
 // ================One===================
@@ -3735,9 +3584,9 @@ if (sliderOne) {
       max: 6000
     }
   });
-  var currentInput = sliderOne.closest(".js-range-slider-one").querySelector(".js-field__input");
-  var currentValue;
-  var words = ["литр", "литра", "литров"];
+  const currentInput = sliderOne.closest(".js-range-slider-one").querySelector(".js-field__input");
+  let currentValue;
+  const words = ["литр", "литра", "литров"];
   sliderOne.noUiSlider.on("update", function (values, handle) {
     currentValue = Math.round(values[0]);
     currentInput.value = currentValue + " " + getSubstr(words, currentValue);
@@ -3752,8 +3601,8 @@ if (sliderOne) {
     sliderOne.noUiSlider.set(this.value);
   });
   function getSubstr(arr, counter) {
-    var cr = counter.toString().slice(-2);
-    var substr;
+    let cr = counter.toString().slice(-2);
+    let substr;
     if (cr > 9 && cr < 20) substr = arr[2];else {
       cr = counter.toString().slice(-1);
       if (cr == 0) substr = arr[2];
@@ -3767,29 +3616,29 @@ if (sliderOne) {
 // EXTERNAL MODULE: ./src/uikit/elements/images-slider/images-slider.js
 var images_slider = __webpack_require__(3238);
 ;// CONCATENATED MODULE: ./src/sys/js/mode-mobile-pc.js
-var mobileDisplayMode;
+let mobileDisplayMode;
 function setMobilePcMode() {
-  var isMobile = {
-    Android: function Android() {
+  const isMobile = {
+    Android: function () {
       return navigator.userAgent.match(/Android/i);
     },
-    BlackBerry: function BlackBerry() {
+    BlackBerry: function () {
       return navigator.userAgent.match(/BlackBerry/i);
     },
-    iOS: function iOS() {
+    iOS: function () {
       return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
-    Opera: function Opera() {
+    Opera: function () {
       return navigator.userAgent.match(/Opera Mini/i);
     },
-    Windows: function Windows() {
+    Windows: function () {
       return navigator.userAgent.match(/IEMobile/i);
     },
-    any: function any() {
+    any: function () {
       return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
     }
   };
-  var mediaQuery = window.matchMedia("(min-width: 992px)");
+  const mediaQuery = window.matchMedia("(min-width: 992px)");
   // mediaQuery.addListener(handleTabletChange);
   // handleTabletChange(mediaQuery);
 
@@ -3799,7 +3648,7 @@ function setMobilePcMode() {
   //   }
   // }
 
-  var body = document.body;
+  const body = document.body;
   window.addEventListener("resize", watchDevice);
   watchDevice();
   function watchDevice() {
@@ -3821,7 +3670,7 @@ function setMobilePcMode() {
 
 ;// CONCATENATED MODULE: ./src/sys/js/helper-functions.js
 function toggleClass(opts) {
-  opts.trigger.addEventListener("click", function (e) {
+  opts.trigger.addEventListener("click", e => {
     opts.target.classList.toggle(opts.addClass);
     console.log(opts.target);
   });
@@ -3838,11 +3687,11 @@ function toggleClass(opts) {
 // +++++++++++++++++++++++++++++++
 
 function toggleLock(opts) {
-  var body = document.body;
-  var header = document.querySelector(".js-header");
-  var menu = document.querySelector(".js-menu");
-  var lockInstalled = false;
-  opts.trigger.addEventListener("click", function (e) {
+  const body = document.body;
+  const header = document.querySelector(".js-header");
+  const menu = document.querySelector(".js-menu");
+  let lockInstalled = false;
+  opts.trigger.addEventListener("click", e => {
     if (body || header) {
       if (!lockInstalled) {
         body.classList.add("_lock");
@@ -3853,7 +3702,7 @@ function toggleLock(opts) {
         removeScrollWidth();
         lockInstalled = false;
       }
-      var mediaQuery = window.matchMedia("(min-width: 992px)");
+      const mediaQuery = window.matchMedia("(min-width: 992px)");
       mediaQuery.addListener(handleTabletChange);
       handleTabletChange(mediaQuery);
       function handleTabletChange(e) {
@@ -3865,7 +3714,7 @@ function toggleLock(opts) {
         }
       }
       function addScrollWidth() {
-        var scrollWidth = getScrollWidth();
+        const scrollWidth = getScrollWidth();
         header.style.paddingRight = scrollWidth;
         body.style.paddingRight = scrollWidth;
       }
@@ -3874,12 +3723,12 @@ function toggleLock(opts) {
         body.style.paddingRight = "";
       }
       function getScrollWidth() {
-        var div = document.createElement("div");
+        let div = document.createElement("div");
         div.style.overflowY = "scroll";
         div.style.width = "50px";
         div.style.height = "50px";
         document.body.append(div);
-        var scrollWidth = div.offsetWidth - div.clientWidth;
+        let scrollWidth = div.offsetWidth - div.clientWidth;
         div.remove();
         return scrollWidth + "px";
       }
@@ -3900,18 +3749,18 @@ function toggleLock(opts) {
     trigger: document.querySelector(".js-menu__icon")
   });
   function DrawerBlock(drawerBlockClassName) {
-    var view = {
+    const view = {
       // toggleClassOpen(el, className) {
       //   el.classList.toggle(className);
       // },
       // removeClassOpen(el, className) {
       //   el.classList.remove(className);
       // },
-      floatingBlockHandle: function floatingBlockHandle() {
-        var floatingBlock = document.querySelector(".js-floating-block");
+      floatingBlockHandle() {
+        const floatingBlock = document.querySelector(".js-floating-block");
         if (floatingBlock) {
-          var parentDrawerBlock = document.querySelector(".js-target");
-          var drawerBlock = document.querySelector(drawerBlockClassName);
+          const parentDrawerBlock = document.querySelector(".js-target");
+          const drawerBlock = document.querySelector(drawerBlockClassName);
           if (mobileDisplayMode) {
             drawerBlock.append(floatingBlock);
           } else {
@@ -3920,8 +3769,8 @@ function toggleLock(opts) {
         }
       }
     };
-    var module = {};
-    var controller = {
+    const module = {};
+    const controller = {
       // showDrawerBlock(e) {
       //   e.stopPropagation();
       //   const parentDrawerBlock = e.currentTarget.closest(".js-parent-drawer-block");
@@ -3961,13 +3810,13 @@ function toggleLock(opts) {
     //   }
     // }
 
-    var app = {
-      init: function init() {
+    const app = {
+      init() {
         setMobilePcMode();
         view.floatingBlockHandle();
         this.events();
       },
-      events: function events() {
+      events() {
         // const buttonDrawerBlock = document.querySelector(".js-button-drawer-block");
         // buttonDrawerBlock.addEventListener("click", controller.showDrawerBlock);
         window.addEventListener("resize", view.floatingBlockHandle);
@@ -4090,8 +3939,8 @@ var inputmask = __webpack_require__(6298);
 var inputmask_default = /*#__PURE__*/__webpack_require__.n(inputmask);
 ;// CONCATENATED MODULE: ./src/uikit/elements/input-mask/input-mask.js
 
-var inputsTel = document.querySelectorAll("input[type='tel']");
-var im = new (inputmask_default())("+7 (999) 999-99-99");
+const inputsTel = document.querySelectorAll("input[type='tel']");
+const im = new (inputmask_default())("+7 (999) 999-99-99");
 im.mask(inputsTel);
 // EXTERNAL MODULE: ./src/uikit/elements/select/select.js
 var select_select = __webpack_require__(2401);
@@ -4138,19 +3987,19 @@ var select_select = __webpack_require__(2401);
 
 (function () {
   function imagesSlider(slider) {
-    var sliderLine = slider.querySelector(".js-images-slider__line");
-    var allSlides = sliderLine.querySelectorAll(".js-images-slider__slide");
-    var btnPrev = slider.querySelector(".js-images-slider__control-previous");
-    var btnNext = slider.querySelector(".js-images-slider__control-next");
-    var progress = slider.querySelector(".js-images-slider__control-progress");
-    var quantitySlides = allSlides.length;
-    var currentSlideIndex = 0;
-    var linePosition = 0;
-    var offset = 100;
-    var allProgressItems = progressItemsCreate();
+    const sliderLine = slider.querySelector(".js-images-slider__line");
+    const allSlides = sliderLine.querySelectorAll(".js-images-slider__slide");
+    const btnPrev = slider.querySelector(".js-images-slider__control-previous");
+    const btnNext = slider.querySelector(".js-images-slider__control-next");
+    const progress = slider.querySelector(".js-images-slider__control-progress");
+    let quantitySlides = allSlides.length;
+    let currentSlideIndex = 0;
+    let linePosition = 0;
+    let offset = 100;
+    const allProgressItems = progressItemsCreate();
     setProgress();
-    allProgressItems.forEach(function (progressItem, indexProgressItem) {
-      progressItem.addEventListener("click", function (e) {
+    allProgressItems.forEach((progressItem, indexProgressItem) => {
+      progressItem.addEventListener("click", e => {
         linePosition = -offset * indexProgressItem;
         currentSlideIndex = indexProgressItem;
         setProgress();
@@ -4180,19 +4029,19 @@ var select_select = __webpack_require__(2401);
       setProgress();
     }
     function positionSetting() {
-      sliderLine.style.transform = "translateX(".concat(linePosition, "%)");
+      sliderLine.style.transform = `translateX(${linePosition}%)`;
     }
     function progressItemsCreate() {
-      for (var i = 1; i < quantitySlides; i++) {
-        var progressItem = document.createElement("div");
+      for (let i = 1; i < quantitySlides; i++) {
+        const progressItem = document.createElement("div");
         progressItem.classList.add("js-images-slider__control-progress-item");
         progress.append(progressItem);
       }
       return progress.querySelectorAll(".js-images-slider__control-progress-item");
     }
     function setProgress() {
-      var allProgressItem = progress.querySelectorAll(".js-images-slider__control-progress-item");
-      allProgressItem.forEach(function (item) {
+      const allProgressItem = progress.querySelectorAll(".js-images-slider__control-progress-item");
+      allProgressItem.forEach(item => {
         item.classList.remove("js-images-slider__control-progress-item--active");
       });
       allProgressItem[currentSlideIndex].classList.add("js-images-slider__control-progress-item--active");
@@ -4201,8 +4050,8 @@ var select_select = __webpack_require__(2401);
       console.log(e.currentTarget);
     }
   }
-  var imagesSlidersAll = document.querySelectorAll(".js-images-slider");
-  imagesSlidersAll.forEach(function (sliderItem) {
+  const imagesSlidersAll = document.querySelectorAll(".js-images-slider");
+  imagesSlidersAll.forEach(sliderItem => {
     new imagesSlider(sliderItem);
   });
 })();
@@ -4217,17 +4066,17 @@ var select_select = __webpack_require__(2401);
 
 (function () {
   function ItemQuantityDropdown(el) {
-    var currentDropdown = el.closest(".dropdown");
-    var dropdownInput = currentDropdown.querySelector(".dropdown__input");
-    var totalCount;
-    var itemCount = {};
-    var iqDropdownItems = el.querySelectorAll(".iq-dropdown-item");
-    var wordsTotal;
-    var wordsItem;
-    var wordsItem1;
-    var wordsItem2;
-    var wordsItem3;
-    var iqDropdownId = el.dataset.id;
+    const currentDropdown = el.closest(".dropdown");
+    const dropdownInput = currentDropdown.querySelector(".dropdown__input");
+    let totalCount;
+    const itemCount = {};
+    const iqDropdownItems = el.querySelectorAll(".iq-dropdown-item");
+    let wordsTotal;
+    let wordsItem;
+    let wordsItem1;
+    let wordsItem2;
+    let wordsItem3;
+    const iqDropdownId = el.dataset.id;
     if (iqDropdownId == "guests") {
       wordsTotal = ["гость", "гостя", "гостей"];
       wordsItem = ["младенец", "младенца", "младенцев"];
@@ -4237,39 +4086,39 @@ var select_select = __webpack_require__(2401);
       wordsItem2 = ["кровать", "кровати", "кроватей"];
       wordsItem3 = ["ванная комнаты", "ванные комнаты", "ванных комнат"];
     }
-    var buttonClear = el.querySelector("[data-name='clear']");
-    var buttonApply = el.querySelector("[data-name='apply']");
-    iqDropdownItems.forEach(function (iqDropdownItem) {
-      var itemId = iqDropdownItem.dataset.id;
-      var itemViewCount = iqDropdownItem.querySelector(".iq-dropdown-item__count");
+    let buttonClear = el.querySelector("[data-name='clear']");
+    let buttonApply = el.querySelector("[data-name='apply']");
+    iqDropdownItems.forEach(iqDropdownItem => {
+      const itemId = iqDropdownItem.dataset.id;
+      const itemViewCount = iqDropdownItem.querySelector(".iq-dropdown-item__count");
       itemCount[itemId] = +itemViewCount.outerText;
-      var decrementButton = iqDropdownItem.querySelector("[data-action=decrement-button]");
-      var incrementButton = iqDropdownItem.querySelector("[data-action=increment-button]");
+      let decrementButton = iqDropdownItem.querySelector("[data-action=decrement-button]");
+      let incrementButton = iqDropdownItem.querySelector("[data-action=increment-button]");
 
       // if (iqDropdownItems.length === Object.values(itemCount).length) {
       updateItemCountDisplay();
       // }
 
-      decrementButton.addEventListener("click", function () {
+      decrementButton.addEventListener("click", () => {
         if (itemCount[itemId] <= 0) {
           return;
         }
         itemCount[itemId] -= 1;
         updateItemCountDisplay();
       });
-      incrementButton.addEventListener("click", function () {
+      incrementButton.addEventListener("click", () => {
         itemCount[itemId] += 1;
         updateItemCountDisplay();
       });
       if (buttonClear) {
-        buttonClear.addEventListener("click", function () {
+        buttonClear.addEventListener("click", () => {
           totalCount = 0;
           itemCount[itemId] = 0;
           updateItemCountDisplay();
         });
       }
       if (buttonApply) {
-        buttonApply.addEventListener("click", function () {
+        buttonApply.addEventListener("click", () => {
           currentDropdown.classList.remove("dropdown--menu-open");
         });
       }
@@ -4291,9 +4140,7 @@ var select_select = __webpack_require__(2401);
         itemViewCount.innerHTML = itemCount[itemId];
       }
       function getTotalCount() {
-        return Object.values(itemCount).reduce(function (prev, current) {
-          return prev + +current;
-        }, 0);
+        return Object.values(itemCount).reduce((prev, current) => prev + +current, 0);
       }
       function showButtonClear() {
         if (buttonClear) {
@@ -4305,44 +4152,44 @@ var select_select = __webpack_require__(2401);
         }
       }
       function getStr() {
-        var str;
+        let str;
         if (iqDropdownId == "guests") {
-          var item3 = itemCount["item3"];
-          var substrGuest;
-          var substBaby;
+          let item3 = itemCount["item3"];
+          let substrGuest;
+          let substBaby;
           substrGuest = getSubstr(wordsTotal, totalCount);
           if (item3) {
             substBaby = getSubstr(wordsItem, item3);
-            str = "".concat(totalCount, " ").concat(substrGuest, ", ").concat(item3, " ").concat(substBaby);
+            str = `${totalCount} ${substrGuest}, ${item3} ${substBaby}`;
           } else {
-            str = "".concat(totalCount, " ").concat(substrGuest);
+            str = `${totalCount} ${substrGuest}`;
           }
         }
         if (iqDropdownId == "facilities") {
-          var countItem1 = itemCount["item1"];
-          var countItem2 = itemCount["item2"];
-          var countItem3 = itemCount["item3"];
-          var substrItem1;
-          var substrItem2;
-          var substrItem3;
+          let countItem1 = itemCount["item1"];
+          let countItem2 = itemCount["item2"];
+          let countItem3 = itemCount["item3"];
+          let substrItem1;
+          let substrItem2;
+          let substrItem3;
           if (countItem1) {
             substrItem1 = getSubstr(wordsItem1, countItem1);
-            str = "".concat(countItem1, " ").concat(substrItem1);
+            str = `${countItem1} ${substrItem1}`;
           }
           if (countItem2) {
             substrItem2 = getSubstr(wordsItem2, countItem2);
-            str = "".concat(countItem1, " ").concat(substrItem1, ", ").concat(countItem2, " ").concat(substrItem2);
+            str = `${countItem1} ${substrItem1}, ${countItem2} ${substrItem2}`;
           }
           if (countItem3) {
             substrItem3 = getSubstr(wordsItem3, countItem3);
-            str = "".concat(countItem1, " ").concat(substrItem1, ", ").concat(countItem2, " ").concat(substrItem2, ", ").concat(countItem3, " ").concat(substrItem3);
+            str = `${countItem1} ${substrItem1}, ${countItem2} ${substrItem2}, ${countItem3} ${substrItem3}`;
           }
         }
         return str;
       }
       function getSubstr(arr, counter) {
-        var cr = counter.toString().slice(-2);
-        var substr;
+        let cr = counter.toString().slice(-2);
+        let substr;
         if (cr > 9 && cr < 20) substr = arr[2];else {
           cr = counter.toString().slice(-1);
           if (cr == 0) substr = arr[2];
@@ -4354,8 +4201,8 @@ var select_select = __webpack_require__(2401);
       }
     });
   }
-  var iqDropdownElements = document.querySelectorAll(".iq-dropdown");
-  iqDropdownElements.forEach(function (iqDropdown) {
+  const iqDropdownElements = document.querySelectorAll(".iq-dropdown");
+  iqDropdownElements.forEach(iqDropdown => {
     new ItemQuantityDropdown(iqDropdown);
   });
 })();
@@ -4371,10 +4218,10 @@ var select_select = __webpack_require__(2401);
 (function () {
   liked();
   function liked() {
-    var likeButtons = document.querySelectorAll(".like-button .like-button__body");
-    likeButtons.forEach(function (likeButton) {
-      var likeCount = likeButton.querySelector(".like-button__value");
-      var isLiked = false;
+    let likeButtons = document.querySelectorAll(".like-button .like-button__body");
+    likeButtons.forEach(likeButton => {
+      let likeCount = likeButton.querySelector(".like-button__value");
+      let isLiked = false;
       likeButton.addEventListener("click", function (e) {
         if (isLiked) {
           e.currentTarget.classList.remove("like-button--liked");
@@ -4399,23 +4246,23 @@ var select_select = __webpack_require__(2401);
 
 
 (function selectsHandler() {
-  var selects = document.querySelectorAll(".select");
-  selects.forEach(function (select) {
+  const selects = document.querySelectorAll(".select");
+  selects.forEach(select => {
     setStartValue(select);
     select.addEventListener("click", selectChoose);
   });
   function selectChoose(e) {
-    var currentSelect = e.currentTarget;
-    var selectInput = currentSelect.querySelector(".js-dropdown__button");
-    var selectItem = e.target.closest(".js-select__item");
+    const currentSelect = e.currentTarget;
+    const selectInput = currentSelect.querySelector(".js-dropdown__button");
+    const selectItem = e.target.closest(".js-select__item");
     if (selectItem) {
       selectInput.value = selectItem.textContent;
       currentSelect.querySelector(".js-dropdown").classList.remove("dropdown--menu-open");
     }
   }
   function setStartValue(select) {
-    var startValue = select.querySelector(".js-select__item").textContent;
-    var selectInput = select.querySelector(".js-dropdown__button");
+    const startValue = select.querySelector(".js-select__item").textContent;
+    const selectInput = select.querySelector(".js-dropdown__button");
     selectInput.value = startValue;
   }
 })();
