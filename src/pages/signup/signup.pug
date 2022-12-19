@@ -1,0 +1,73 @@
+extends ../../sys/pug/main.pug
+
+block variables
+	- var title = 'Toxin';
+	- var description = 'Бронирование отелей';
+	//- - var pageClass = 'show-sidebar';
+	
+block content
+	main.main
+		section.signup
+			.signup__image.ibg
+				img(src=require("../../assets/img/signup/fullsignup.jpg"), alt="room")
+			.container
+				+account-registration({
+					title: 'Регистрация аккаунта',
+					fieldName: {
+						label: false,
+						type: 'text',
+						name: 'name',
+						placeholder: 'Имя',
+						tabindex: 1,
+						required: true,
+					},
+					fieldSurname: {
+						label: false,
+						type: 'text',
+						name: 'surname',
+						placeholder: 'Фамилия',
+						tabindex: 1,
+						required: true,
+					},
+					radioButtons: {
+						title: false,
+						radio__1: 'Мужчина', 
+						radio__2: 'Женщина', 
+						name: 'radio'
+					},
+					maskedTextField: {
+						label: 'дата рождения',
+						type: 'text',
+						name: 'birthday',
+						placeholder: 'ДД.ММ.ГГГГ',
+						tabindex: 1,
+						required: true,
+					},
+					fieldEmail: {
+						label: 'данные для входа в сервис',
+						type: 'email',
+						name: 'email',
+						placeholder: 'Email',
+						tabindex: 1,
+						required: true,
+					},
+					fieldPassword: {
+						label: false,
+						type: 'password',
+						name: 'password',
+						placeholder: 'Пароль',
+						tabindex: 1,
+						required: true,
+					},
+					toggleButton: {
+						title: false, 
+						text: 'Получать спецпредложения'
+					},
+					buttonArrow: {
+						text: 'перейти к оплате',
+					},
+					accountActionsText: 'Уже есть аккаунт на Toxin',
+					buttonBorder: {
+						text: 'войти',
+					}
+				})
