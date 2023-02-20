@@ -2,14 +2,63 @@
 @import "../../uikit/elements/elements-page/elements-page.scss";
 @import "../../uikit/cards/cards-page/cards-page.scss";
 
+.main {
+  min-height: calc(100vh - 70px);
+}
 .signup {
   position: relative;
   min-height: calc(100vh - 70px);
-  // height: 100%;
 
   &__image {
     position: absolute;
     width: 100%;
     height: 100%;
+  }
+  &__container {
+    min-height: calc(100vh - 70px);
+  }
+  &__body {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.account-registration {
+  flex: 0 1 380px;
+  margin: 19px 0;
+  padding: 40px 30px 30px;
+  @include mb(20px);
+  @include xs-block() {
+    padding: 20px 10px 10px;
+  }
+
+  &__item {
+  }
+  &__button {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    @extend %font-h1;
+    @include xs-block() {
+      text-align: center;
+    }
+  }
+
+  &__group {
+    @include mb(10px);
+  }
+
+  &__space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__account-actions-text {
+    margin-right: 15px;
+    @extend %font-body;
   }
 }

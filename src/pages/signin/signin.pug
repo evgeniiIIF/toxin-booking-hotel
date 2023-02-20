@@ -1,0 +1,41 @@
+extends ../../sys/pug/main.pug
+
+block variables
+	- var title = 'Toxin';
+	- var description = 'Бронирование отелей';
+	//- - var pageClass = 'show-sidebar';
+	
+block content
+	main.main
+		section.signin
+			.signin__image.ibg
+				img(src=require("../../assets/img/signup/fullsignup.jpg"), alt="room")
+			.signin__container.container
+				.signin__body
+					+signing-in({
+						title: 'Войти',
+						fieldName: {
+							label: false,
+							type: 'text',
+							name: 'name',
+							placeholder: 'Имя',
+							tabindex: 1,
+							required: true,
+						},
+						fieldSurname: {
+							label: false,
+							type: 'text',
+							name: 'surname',
+							placeholder: 'Фамилия',
+							tabindex: 1,
+							required: true,
+						},
+						buttonArrow: {
+							text: 'Войти',
+						},
+						accountActionsText: 'Нет аккаунта на Toxin?',
+						buttonBorder: {
+							href: 'signup.html',
+							text: 'создать',
+						}
+					})

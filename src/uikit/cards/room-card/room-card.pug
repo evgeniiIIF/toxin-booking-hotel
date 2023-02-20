@@ -3,7 +3,7 @@ mixin room-card(opts)
     +images-slider(opts.images)
     .room-card__body
       .room-card__info
-        .room-card__number
+        a(href="room.html").room-card__number
           span.room-card__number-numbers= ('№ ' + opts.number + ' ')
           if(opts.characteristic)
             span.room-card__number-characteristic= (opts.characteristic)

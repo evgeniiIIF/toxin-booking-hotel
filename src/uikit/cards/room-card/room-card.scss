@@ -1,5 +1,43 @@
+@keyframes shine {
+  0% {
+    color: $dark-100;
+    transform: scale(100%);
+  }
+  40% {
+    transform: scale(120%);
+    color: rgb(47, 0, 255);
+  }
+  45% {
+    transform: scale(130%) rotate(10deg);
+    color: rgb(47, 0, 255);
+  }
+  50% {
+    transform: scale(130%) rotate(0deg);
+    color: rgb(47, 0, 255);
+  }
+  55% {
+    transform: scale(130%) rotate(-10deg);
+    color: rgb(6, 125, 204);
+  }
+  65% {
+    transform: scale(120%) rotate(0deg);
+    color: rgb(47, 0, 255);
+  }
+  100% {
+    color: $dark-100;
+    transform: scale(100%);
+  }
+}
+
 .room-card {
   min-width: 270px;
+
+  &:hover {
+    .room-card__number {
+      animation: shine 3s;
+      animation-iteration-count: infinite;
+    }
+  }
   & .images-slider__slide.ibg {
     padding-top: 56.666667%;
   }
@@ -16,6 +54,7 @@
   }
 
   &__number {
+    cursor: pointer;
   }
 
   &__number-numbers {

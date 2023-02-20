@@ -1,0 +1,24 @@
+extends ../../sys/pug/main.pug
+
+block variables
+	- var title = 'Toxin';
+	- var description = 'Бронирование отелей';
+	//- - var pageClass = 'show-sidebar';
+	
+block content
+	main.main
+		section.room
+			.room__image-slider
+				+images-slider([
+					require("../../assets/img/room/image.jpg"),
+					require("../../assets/img/room/image2.jpg"),
+					require("../../assets/img/room/image3.jpg"),
+				])
+			.room__fw-images.room-fw-images
+				.room-fw-images__big.ibg
+					img(src=require("../../assets/img/room/image.jpg"), alt="room")
+				.room-fw-images__column
+					.room-fw-images__small.ibg
+						img(src=require("../../assets/img/room/image2.jpg"), alt="room")
+					.room-fw-images__small.ibg
+						img(src=require("../../assets/img/room/image3.jpg"), alt="room")

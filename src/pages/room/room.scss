@@ -1,0 +1,47 @@
+@import "../../sys/scss/settings.scss";
+@import "../../uikit/elements/elements-page/elements-page.scss";
+@import "../../uikit/cards/cards-page/cards-page.scss";
+
+.room {
+  height: calc(100vh - 70px);
+
+  &__fw-images {
+    @include md-block() {
+      display: none;
+    }
+  }
+  &__image-slider {
+    display: none;
+    height: calc(100vh - 70px);
+    @include md-block() {
+      display: block;
+    }
+
+    .images-slider {
+      height: 100%;
+    }
+    .images-slider__line {
+      height: 100%;
+    }
+  }
+}
+.room-fw-images {
+  display: flex;
+  height: 100%;
+
+  &__big {
+    height: 100%;
+    flex: 0 0 70%;
+  }
+
+  &__column {
+    height: 100%;
+    flex: 0 0 30%;
+  }
+
+  &__small {
+    height: 50%;
+  }
+}
+.ibg {
+}
